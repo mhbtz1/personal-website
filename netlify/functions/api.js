@@ -12,21 +12,10 @@ const app = express()
 console.log("static path: ", path.join(_dirname, '../dist'))
 app.use(express.static(path.join(_dirname, '../dist'))) //all file requests from browser to server will look in this static directory
 
-// Create Vite server in middleware mode and configure the app type as
-// 'custom', disabling Vite's own HTML serving logic so parent server
-// can take control
-const vite = await createViteServer({
-  server: { middlewareMode: true },
-  appType: 'custom'
-})
-
-// Use vite's connect instance as middleware. If you use your own
-// express router (express.Router()), you should use router.use
 // When the server restarts (for example after the user modifies
 // vite.config.js), `vite.middlewares` is still going to be the same
 // reference (with a new internal stack of Vite and plugin-injected
 // middlewares). The following is valid even after restarts.
-app.use(vite.middlewares)
 
 
 //for fetching minified JS/CSS files
@@ -52,6 +41,10 @@ app.use(async (req, res, next) => {
 app.get('/api', async (req, res, next) => {
   console.log("run default endpoint")
   res.socket.on("error", (error) => console.log("Fatal error", error))
+  const vite = await createViteServer({
+    server: { middlewareMode: true },
+    appType: 'custom'
+  })
   try {
     // 1. Read index.html
     const template = await fs.readFile(path.join(_dirname, '../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
@@ -78,7 +71,16 @@ app.get('/api/about', async (req, res) => {
 
   console.log("run about endpoint")
   res.socket.on("error", (error) => console.log("Fatal error", error))
+  const vite = await createViteServer({
+    server: { middlewareMode: true },
+    appType: 'custom'
+  })
   try {
+
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: 'custom'
+    })
     // 1. Read index.html
     const template = await fs.readFile(path.join(_dirname, '../index.html').substring(5), { "encoding" : 'utf-8' } )
     const render = (await vite.ssrLoadModule(path.join(_dirname, '../src/entry-server.tsx').substring(5)))
@@ -102,6 +104,10 @@ app.get('/api/about', async (req, res) => {
 app.get('/api/resume', async (req, res) => {
   console.log("run resume endpoint")
   res.socket.on("error", (error) => console.log("Fatal error", error))
+  const vite = await createViteServer({
+    server: { middlewareMode: true },
+    appType: 'custom'
+  })
   try {
     // 1. Read index.html
     const template = await fs.readFile(path.join(_dirname, '../index.html').substring(5), { "encoding" : 'utf-8' } )
