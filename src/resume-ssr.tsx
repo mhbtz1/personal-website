@@ -1,7 +1,6 @@
 
 import ReactDOMServer from 'react-dom/server';
 import Resume from './components/Resume'
-import React from 'react'
 import { StaticRouter } from 'react-router-dom/server';
 
 
