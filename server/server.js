@@ -76,7 +76,7 @@ async function createServer() {
   app.get('/about', async (req, res) => {
 
 
-    console.log("run default endpoint")
+    console.log("run about endpoint")
     res.socket.on("error", (error) => console.log("Fatal error", error))
     try {
       // 1. Read index.html
@@ -100,7 +100,7 @@ async function createServer() {
   })
 
   app.get('/resume', async (req, res) => {
-    console.log("run default endpoint")
+    console.log("run resume endpoint")
     res.socket.on("error", (error) => console.log("Fatal error", error))
     try {
       // 1. Read index.html
