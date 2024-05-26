@@ -1,6 +1,6 @@
 import "./css/Sidebar.css"
 
-const url = "https://habtem.netlify.app"
+const url = "https://habtem.netlify.app/.netlify/functions/api"
 
 
 
