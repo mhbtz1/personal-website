@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "homepage": "./dist/client",
   "type": "module",
-  "main" : "functions/api.js",
+  "main": "functions/api.js",
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build --ssrManifest && netlify-lambda build express",
@@ -21,6 +21,7 @@
     "express": "^4.19.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
