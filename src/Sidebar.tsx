@@ -1,9 +1,7 @@
 import "./css/Sidebar.css"
 
-let url = "http://localhost:5173"
-if (process.env.PRODUCTION){
-    url = "https://habtem.vercel.app"
-}
+const url = "https://habtem.netlify.app"
+
 
 
 function Sidebar() {
