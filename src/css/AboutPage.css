@@ -1,0 +1,13 @@
+#content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #999;
+    font-family: sans-serif;
+  }
+  
+  .about {
+    margin-top: 25%;
+  }
+  
