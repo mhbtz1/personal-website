@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "homepage": "./dist/client",
   "type": "module",
-  "main": "functions/api.js",
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && tsc && vite build --ssrManifest && netlify-lambda build express",
+    "build": "rm -rf dist && tsc && vite build --ssrManifest && netlify-lambda build netlify-lambda-config.js",
     "start": "node server/server.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -15,10 +14,13 @@
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.js"
   },
   "dependencies": {
+    "@babel/code-frame": "^7.24.6",
+    "@babel/core": "^7.24.6",
     "@radix-ui/react-icons": "^1.3.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "express": "^4.19.2",
+    "netlify-cli": "^17.23.8",
     "netlify-lambda": "^2.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,6 +29,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.24.6",
     "@types/node": "^20.12.12",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",

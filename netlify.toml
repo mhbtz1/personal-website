@@ -1,4 +1,11 @@
 [build]
   command = "npm install && npm run build"
   publish = "dist"
-  functions = "functions"
+
+[functions]
+  directory = "dist/functions" 
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.functions/express/api/:splat"
+  status = 200

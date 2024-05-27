@@ -1,16 +1,18 @@
-import fs from 'node:fs/promises'
-import path from 'node:path'
-import express from 'express' //ES type importing
-import { createServer as createViteServer } from 'vite'
-import serverless from "serverless-http";
-import mime from 'mime-types'
+//use CommonJS for Netlify Functions
 
+console.log("Running api.cjs...")
 
-const _dirname = path.dirname(import.meta.url)
+const fs = require('fs').promises;
+const path = require('path');
+const express = require('express');
+const { createServer: createViteServer } = require('vite');
+const serverless = require('serverless-http');
+const mime = require('mime-types');
+
 
 const app = express()
-console.log("static path: ", path.join(_dirname, '../dist'))
-app.use(express.static(path.join(_dirname, '../dist'))) //all file requests from browser to server will look in this static directory
+console.log("static path: ", path.join(__dirname, '../dist'))
+app.use(express.static(path.join(__dirname, '../dist'))) //all file requests from browser to server will look in this static directory
 
 // When the server restarts (for example after the user modifies
 // vite.config.js), `vite.middlewares` is still going to be the same
@@ -20,7 +22,7 @@ app.use(express.static(path.join(_dirname, '../dist'))) //all file requests from
 
 //for fetching minified JS/CSS files
 app.use(async (req, res, next) => {
-  const filePath = path.join(_dirname, '../dist', req.url).substring(5);
+  const filePath = path.join(__dirname, '../dist', req.url).substring(5);
   console.log("filePath: ", filePath)
   let fs = (await import('fs'))
   if (fs.existsSync(filePath)) {
@@ -47,8 +49,8 @@ app.get('/api', async (req, res, next) => {
   })
   try {
     // 1. Read index.html
-    const template = await fs.readFile(path.join(_dirname, '../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
-    const render = (await vite.ssrLoadModule(path.join(_dirname, '../src/entry-server.tsx').substring(5))).render
+    const template = await fs.readFile(path.join(__dirname, '../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
+    const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/entry-server.tsx').substring(5))).render
     const { reactContent } = await render()
     console.log("appHtml: ", reactContent)
     console.log("template: ", template)
@@ -82,8 +84,8 @@ app.get('/api/about', async (req, res) => {
       appType: 'custom'
     })
     // 1. Read index.html
-    const template = await fs.readFile(path.join(_dirname, '../index.html').substring(5), { "encoding" : 'utf-8' } )
-    const render = (await vite.ssrLoadModule(path.join(_dirname, '../src/entry-server.tsx').substring(5)))
+    const template = await fs.readFile(path.join(__dirname, '../index.html').substring(5), { "encoding" : 'utf-8' } )
+    const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/entry-server.tsx').substring(5)))
     const { reactContent } = await render.render()
     const { about } = await render.renderAbout()
     console.log("appHtml: ", reactContent)
@@ -110,8 +112,8 @@ app.get('/api/resume', async (req, res) => {
   })
   try {
     // 1. Read index.html
-    const template = await fs.readFile(path.join(_dirname, '../index.html').substring(5), { "encoding" : 'utf-8' } )
-    const render = (await vite.ssrLoadModule(path.join(_dirname, '../src/resume-ssr.tsx').substring(5)))
+    const template = await fs.readFile(path.join(__dirname, '../index.html').substring(5), { "encoding" : 'utf-8' } )
+    const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/resume-ssr.tsx').substring(5)))
     const { resume } = await render.renderResume()
     const html2 = template.replace('<!--resumeContent -->', resume)
       // 5. Inject the app-rendered HTML into the template.
@@ -128,6 +130,6 @@ app.get('/api/resume', async (req, res) => {
   })
 
   //app.listen(5173)
-
-  export const handler = serverless(app)
+  
+  module.exports.handler = serverless(app)
 
