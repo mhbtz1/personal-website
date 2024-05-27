@@ -7,12 +7,17 @@
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && npm install && vite build --ssrManifest",
-    "start": "node server/server.js",
+    "start": "node api/server.js",
     "deploy": "vercel login && vercel deploy --prod",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.js"
+  },
+  "overrides": {
+    "vite": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
   },
   "dependencies": {
     "@babel/code-frame": "^7.24.6",
@@ -23,11 +28,11 @@
     "clsx": "^2.1.1",
     "express": "^4.19.2",
     "lightningcss": "^1.25.1",
-
     "netlify-lambda": "^2.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
+    "rollup": "^4.18.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },

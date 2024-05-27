@@ -1,14 +1,14 @@
 
 import ReactDOMServer from 'react-dom/server';
 import Resume from './components/Resume'
-import { StaticRouter } from 'react-router-dom/server';
+import React from 'react';
 
 
-export function renderResume(url : string) {
+export function renderResume() {
     const resume = ReactDOMServer.renderToString(
-        <StaticRouter location={url}>
+        <React.StrictMode>
             <Resume />
-        </StaticRouter>
+        </React.StrictMode>
     )
     return { resume }
 }

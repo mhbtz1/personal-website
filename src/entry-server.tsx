@@ -2,26 +2,26 @@ import ReactDOMServer from 'react-dom/server';
 import App from './App.tsx'
 import AboutPage from './components/AboutPage.tsx'
 import Resume from './components/Resume.tsx'
-import { StaticRouter } from 'react-router-dom/server';
+import React from 'react'
 
-export function render(url : string) {
+export function render() {
     const reactContent = ReactDOMServer.renderToString(
-        <StaticRouter location={url}> <App /> </StaticRouter>)
+        <React.StrictMode> <App /> </React.StrictMode>)
     return { reactContent } 
 }
 
-export function renderAbout(url : string) {
+export function renderAbout() {
     const about = ReactDOMServer.renderToString(
-        <StaticRouter location={url}> <AboutPage /> </StaticRouter>
+        <React.StrictMode> <AboutPage /> </React.StrictMode>
     )
     return { about }
 }
 
-export function renderResume(url : string) {
+export function renderResume() {
     const resume = ReactDOMServer.renderToString(
-        <StaticRouter location={url}> 
+        <React.StrictMode> 
             <Resume />
-        </StaticRouter>
+        </React.StrictMode>
     )
     return { resume }
 }
