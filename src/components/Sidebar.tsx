@@ -1,4 +1,4 @@
-import "./css/Sidebar.css"
+import "../css/Sidebar.css"
 
 //const url = "https://habtem.vercel.app"
 const localhost = "https://localhost:3000"

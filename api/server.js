@@ -48,11 +48,13 @@ app.use(async (req, res, next) => {
       res.setHeader('Content-Type', mimeType).sendFile(filePath)
       //let fs = (await import('node:fs/promises'))
     } else {
-      next();
+      next()
     }
   } else {
-    next();
+    next()
   }
+  //next()
+
 });
 
 app.get('/', async (req, res, next) => {
@@ -105,7 +107,7 @@ app.get('/about', async (req, res) => {
     console.log("appHtml: ", reactContent)
     console.log("template: ", template)
     const html = template.replace('<!--reactContent -->', reactContent)
-    const html2 = html.replace('<!--content -->', about)
+    const html2 = html.replace('<!--aboutContent -->', about)
     // 5. Inject the app-rendered HTML into the template.
     console.log("Final html: ", html2)
     // 6. Send the rendered HTML back.
@@ -144,7 +146,6 @@ app.get('/resume', async (req, res) => {
   })
 
   app.listen(3000, () => console.log("Server started on port 3000!") )
-
 
   export default app //for serverless deployments in vercel
 
