@@ -2,15 +2,23 @@
 
 console.log("Running api.cjs...")
 
-const fs = require('fs').promises;
-const path = require('path');
-const express = require('express');
-const { createServer: createViteServer } = require('vite');
-const serverless = require('serverless-http');
-const mime = require('mime-types');
+const fs = require('fs').promises
+const path = require('path')
+const express = require('express')
+const { createViteServer} = require('vite')
+const mime = require('mime-types')
 
+/*
+import fs from "node:fs/promises";
+import path from 'path';
+import express from 'express';
+import { createViteServer } from 'vite';
+import serverless from 'serverless-http';
+import mime from 'mime-types';
+*/
 
 const app = express()
+//const __dirname = import.meta.url
 console.log("static path: ", path.join(__dirname, '../dist'))
 app.use(express.static(path.join(__dirname, '../dist'))) //all file requests from browser to server will look in this static directory
 
@@ -129,7 +137,7 @@ app.get('/api/resume', async (req, res) => {
 
   })
 
-  //app.listen(5173)
+  app.listen(5173, () => console.log("Serve ready on port 5173") )
   
-  module.exports.handler = serverless(app)
+  module.exports = app
 
