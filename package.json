@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm install && vite build --ssrManifest && npm run deploy",
+    "build": "rm -rf dist && npm install && vite build --ssrManifest",
     "start": "node server/server.js",
     "deploy": "vercel login && vercel deploy --prod",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -23,7 +23,7 @@
     "clsx": "^2.1.1",
     "express": "^4.19.2",
     "lightningcss": "^1.25.1",
-    
+
     "netlify-lambda": "^2.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

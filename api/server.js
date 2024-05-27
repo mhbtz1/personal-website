@@ -48,7 +48,7 @@ app.use(async (req, res, next) => {
   }
 });
 
-app.get('/api', async (req, res, next) => {
+app.get('/', async (req, res, next) => {
   console.log("run default endpoint")
   res.socket.on("error", (error) => console.log("Fatal error", error))
   const vite = await createViteServer({
@@ -76,7 +76,7 @@ app.get('/api', async (req, res, next) => {
 })
 
 //seems kind of dumb to use SSR for each resource endpoint, if the point is for SEO
-app.get('/api/about', async (req, res) => {
+app.get('/about', async (req, res) => {
 
 
   console.log("run about endpoint")
@@ -111,7 +111,7 @@ app.get('/api/about', async (req, res) => {
   }
 })
 
-app.get('/api/resume', async (req, res) => {
+app.get('/resume', async (req, res) => {
   console.log("run resume endpoint")
   res.socket.on("error", (error) => console.log("Fatal error", error))
   const vite = await createViteServer({
@@ -137,7 +137,7 @@ app.get('/api/resume', async (req, res) => {
 
   })
 
-  app.listen(5173, () => console.log("Serve ready on port 5173") )
+  app.listen(3000)
   
   module.exports = app
 
