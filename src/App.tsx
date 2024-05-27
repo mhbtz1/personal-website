@@ -9,7 +9,7 @@ import Sidebar from './components/Sidebar'
 import './css/Sidebar.css'
 import './css/AboutPage.css'
 import './css/Resume.css'
-l
+
 console.log("Importing App.tsx...")
 
 function App() {

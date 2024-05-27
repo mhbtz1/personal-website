@@ -1,8 +1,7 @@
 import "../css/Sidebar.css"
 
 //const url = "https://habtem.vercel.app"
-const localhost = "https://localhost:3000"
-
+const localhost = "localhost:3000"
 
 function Sidebar() {
     const endpoint = `${localhost}/resume`
@@ -18,15 +17,16 @@ function Sidebar() {
                     <img src="/IMG_1295.jpg" alt="Profile" />
                 </div>
                 <ul>
-                    <li> <a href={aboutEndpoint}> About </a> </li>
+                    <li> <a href={aboutEndpoint} > About </a> </li>
                     <li>Technical Articles</li>
                     <li>Projects</li>
                     <li>Upwork</li>
                     <li>Other</li>
-                    <li> <a href= {endpoint} > Resume </a> </li>
+                    <li> <a href= {endpoint} rel="noopener noreferrer"> Resume </a> </li>
                 </ul>
             </div>
         </>
+
 
 }
 
