@@ -7,7 +7,7 @@ console.log("Running api.cjs...")
 const fs = require("fs/promises")
 const path = require("path")
 const express = require('express')
-const { createViteServer } = require('vite')
+const { createServer: createViteServer } = require('vite')
 const mime = require('mime-types')
 const port = process.env.PORT || 4000;
 //import '@rollup/rollup-linux-x64-gnu'
