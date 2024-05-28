@@ -4,11 +4,12 @@ console.log("Running api.cjs...")
 
 
 
-import fs from "node:fs/promises"
-import path from "path"
-import express from 'express'
-import { createServer as createViteServer } from 'vite'
-import mime from 'mime-types'
+const fs = require("fs/promises")
+const path = require("path")
+const express = require('express')
+const { createViteServer } = require('vite')
+const mime = require('mime-types')
+const port = process.env.PORT || 4000;
 //import '@rollup/rollup-linux-x64-gnu'
 
 /*
@@ -143,6 +144,6 @@ app.get('/resume', async (req, res) => {
 
   })
 
-  app.listen(import.meta.env.PORT || 3001 )
+  app.listen(port, () => console.log(`Connected to port ${port}`))
 
   export default app //for serverless deployments in vercel
