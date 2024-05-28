@@ -11,6 +11,11 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    hmr: {
+      port: 3005,
+    },
+  },
   css: {
     postcss: {
       plugins: [
