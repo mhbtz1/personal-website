@@ -1,8 +1,8 @@
 import "../css/Sidebar.css"
 
 
-const endpoint = "http://habtem.netlify.app/resume"
-const aboutEndpoint = "http://habtem.netlify.app/about"       
+const endpoint = "http://habtem.vercel.app/resume"
+const aboutEndpoint = "http://habtem.vercel.app/about"       
 
 function Sidebar() {
 
