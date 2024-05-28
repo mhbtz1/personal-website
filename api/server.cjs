@@ -55,6 +55,11 @@ app.use(async (req, res, next) => {
 
 });
 
+
+app.get('/favicon.ico', async (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, '../dist/favicon.ico'))
+})
+
 app.get('/', async (req, res, next) => {
   console.log("run default endpoint")
   res.socket.on("error", (error) => console.log("Fatal error", error))
