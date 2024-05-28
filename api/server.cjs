@@ -22,7 +22,6 @@ import mime from 'mime-types';
 */
 
 const app = express()
-const __dirname = import.meta.url
 console.log("dirname: ", __dirname)
 console.log("static path: ", path.join(__dirname, '../../dist'))
 app.use(express.static(path.join(__dirname, '../../dist'))) //all file requests from browser to server will look in this static directory
