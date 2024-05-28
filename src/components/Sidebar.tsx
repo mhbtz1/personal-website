@@ -1,8 +1,8 @@
 import "../css/Sidebar.css"
 
 
-const endpoint = "http://habtem.vercel.app/resume"
-const aboutEndpoint = "http://habtem.vercel.app/about"       
+const endpoint = "http://habtem.onrender.com/resume"
+const aboutEndpoint = "http://habtem.onrender.com/about"       
 
 function Sidebar() {
 
