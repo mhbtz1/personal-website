@@ -1,10 +1,8 @@
 import "../css/Sidebar.css"
-//import dotenv from 'dotenv';
-//dotenv.config();
 
 
-const endpoint = "http://habtem.vercel.app/resume"
-const aboutEndpoint = "http://habtem.vercel.app/about"       
+const endpoint = "http://habtem.netlify.app/resume"
+const aboutEndpoint = "http://habtem.netlify.app/about"       
 
 function Sidebar() {
 

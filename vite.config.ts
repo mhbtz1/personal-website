@@ -18,6 +18,9 @@ export default defineConfig({
       ],
     },
   },
+  esbuild: {
+    target: 'esnext',
+  },
   build: {
     minify: 'terser', // Enable minification for both JavaScript and CSS
   },
