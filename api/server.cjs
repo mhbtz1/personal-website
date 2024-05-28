@@ -23,8 +23,8 @@ import mime from 'mime-types';
 
 const app = express()
 console.log("dirname: ", __dirname)
-console.log("static path: ", path.join(__dirname, '../../dist'))
-app.use(express.static(path.join(__dirname, '../../dist'))) //all file requests from browser to server will look in this static directory
+console.log("static path: ", path.join(__dirname, '../dist'))
+app.use(express.static(path.join(__dirname, '../dist'))) //all file requests from browser to server will look in this static directory
 
 
 // When the server restarts (for example after the user modifies
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, '../../dist'))) //all file requests 
 
 //for fetching minified JS/CSS files
 app.use(async (req, res, next) => {
-  const filePath = path.join(__dirname, '../../dist', req.url).substring(5);
+  const filePath = path.join(__dirname, '../dist', req.url).substring(5);
   console.log("filePath: ", filePath)
   let fs = (await import('fs'))
   if (fs.existsSync(filePath)) {
@@ -64,8 +64,8 @@ app.get('/', async (req, res, next) => {
   })
   try {
     // 1. Read index.html
-    const template = await fs.readFile(path.join(__dirname, '../../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
-    const render = (await vite.ssrLoadModule(path.join(__dirname, '../../src/entry-server.tsx').substring(5))).render
+    const template = await fs.readFile(path.join(__dirname, '../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
+    const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/entry-server.tsx').substring(5))).render
     const { reactContent } = await render()
     console.log("appHtml: ", reactContent)
     console.log("template: ", template)
@@ -98,8 +98,8 @@ app.get('/about', async (req, res) => {
       appType: 'custom'
     })
     // 1. Read index.html
-    const template = await fs.readFile(path.join(__dirname, '../../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
-    const render = (await vite.ssrLoadModule(path.join(__dirname, '../../src/entry-server.tsx').substring(5)))
+    const template = await fs.readFile(path.join(__dirname, '../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
+    const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/entry-server.tsx').substring(5)))
     const { reactContent } = await render.render()
     const { about } = await render.renderAbout()
     console.log("appHtml: ", reactContent)
@@ -126,8 +126,8 @@ app.get('/resume', async (req, res) => {
   })
   try {
     // 1. Read index.html
-    const template = await fs.readFile(path.join(__dirname, '../../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
-    const render = (await vite.ssrLoadModule(path.join(__dirname, '../../src/resume-ssr.tsx').substring(5)))
+    const template = await fs.readFile(path.join(__dirname, '../dist/index.html').substring(5), { "encoding" : 'utf-8' } )
+    const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/resume-ssr.tsx').substring(5)))
     const { resume } = await render.renderResume()
     const html2 = template.replace('<!--resumeContent -->', resume)
       // 5. Inject the app-rendered HTML into the template.
