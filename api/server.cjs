@@ -34,6 +34,8 @@ app.use(express.static(path.join(__dirname, '../dist'))) //all file requests fro
 
 
 //for fetching minified JS/CSS files
+
+/*
 app.use(async (req, res, next) => {
   const filePath = path.join(__dirname, '../dist', req.url).substring(5);
   console.log("filePath: ", filePath)
@@ -54,6 +56,7 @@ app.use(async (req, res, next) => {
   //next()
 
 });
+*/
 
 
 app.get('/favicon.ico', async (req, res) => {
