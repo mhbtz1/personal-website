@@ -144,5 +144,3 @@ app.get('/resume', async (req, res) => {
   })
 
   app.listen(port, () => console.log(`Connected to port ${port}`))
-
-  export default app //for serverless deployments in vercel
