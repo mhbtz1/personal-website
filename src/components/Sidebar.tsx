@@ -1,8 +1,8 @@
 import "../css/Sidebar.css"
 
 
-const endpoint = "/resume"
-const aboutEndpoint = "/about"       
+const endpoint = "https://habtem.onrender.com/resume"
+const aboutEndpoint = "https://habtem.onrender.com/about"       
 
 function Sidebar() {
 
