@@ -25,7 +25,8 @@ const app = express()
 console.log("dirname: ", __dirname)
 console.log("static path: ", path.join(__dirname, '../dist'))
 app.use(express.static(path.join(__dirname, '../dist'))) //all file requests from browser to server will look in this static directory
-
+app.use(express.json())
+app.use(express.urlencoded({extended: true}));
 
 // When the server restarts (for example after the user modifies
 // vite.config.js), `vite.middlewares` is still going to be the same
@@ -65,7 +66,7 @@ app.get('/favicon.ico', async (req, res) => {
 
 app.get('/', async (req, res, next) => {
   console.log("run default endpoint")
-  res.socket.on("error", (error) => console.log("Fatal error", error))
+  
   const vite = await createViteServer({
     server: { middlewareMode: true },
     appType: 'custom'
@@ -94,7 +95,6 @@ app.get('/', async (req, res, next) => {
 app.get('/about', async (req, res) => {
 
   console.log("run about endpoint")
-  res.socket.on("error", (error) => console.log("Fatal error", error))
   const vite = await createViteServer({
     server: { middlewareMode: true },
     appType: 'custom'
@@ -127,7 +127,6 @@ app.get('/about', async (req, res) => {
 
 app.get('/resume', async (req, res) => {
   console.log("run resume endpoint")
-  res.socket.on("error", (error) => console.log("Fatal error", error))
   const vite = await createViteServer({
     server: { middlewareMode: true },
     appType: 'custom'
