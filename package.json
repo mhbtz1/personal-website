@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && npm install && vite build --ssrManifest",
+    "build": "rm -rf dist && npm install && npm install --save-dev @rollup/rollup-linux-x64-gnu && vite build --ssrManifest",
     "start": "node api/server.js",
     "deploy": "vercel login && vercel deploy --prod",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -32,12 +32,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "rollup": "^4.18.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.24.6",
+    "@rollup/rollup-linux-x64-gnu": "^4.18.0",
     "@types/node": "^20.12.12",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
@@ -53,11 +53,15 @@
     "netlify-cli": "^17.23.8",
     "pkg": "^5.8.1",
     "postcss": "^8.4.38",
+    "rollup": "^4.18.0",
     "rollup-plugin-css-porter": "^1.0.2",
     "serverless-http": "^3.2.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vercel": "^34.2.3",
     "vite": "^5.2.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
   }
 }

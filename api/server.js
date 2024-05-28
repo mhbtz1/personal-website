@@ -9,9 +9,6 @@ import path from "path"
 import express from 'express'
 import { createServer as createViteServer } from 'vite'
 import mime from 'mime-types'
-import * as dotenv from 'dotenv'
-
-dotenv.config()
 
 /*
 import fs from "node:fs/promises";

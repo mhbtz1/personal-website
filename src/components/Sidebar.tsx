@@ -1,15 +1,15 @@
 import "../css/Sidebar.css"
+//import dotenv from 'dotenv';
+//dotenv.config();
 
-//const url = "https://habtem.vercel.app"
-const localhost = "localhost:3000"
+
+const endpoint = "http://habtem.vercel.app/resume"
+const aboutEndpoint = "http://habtem.vercel.app/about"       
 
 function Sidebar() {
-    const endpoint = `${localhost}/resume`
-    const aboutEndpoint = `${localhost}/about`
 
-    console.log(`endpoint: ${endpoint}`)
-    console.log(`aboutEndpoint: ${aboutEndpoint}`)
-
+    console.log("resume endpoint: ", endpoint)
+    console.log("about endpoint: ", aboutEndpoint)
     return <>
             <div className="sidebar">
                 <h2>Matthew Habtezgi</h2>
