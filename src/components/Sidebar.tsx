@@ -1,8 +1,8 @@
 import "../css/Sidebar.css"
 
 
-const endpoint = "http://habtem.onrender.com/resume"
-const aboutEndpoint = "http://habtem.onrender.com/about"       
+const endpoint = "/resume"
+const aboutEndpoint = "/about"       
 
 function Sidebar() {
 
@@ -24,7 +24,6 @@ function Sidebar() {
                 </ul>
             </div>
         </>
-
 
 }
 
