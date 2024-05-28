@@ -20,7 +20,7 @@ function Sidebar() {
                     <li>Projects</li>
                     <li>Upwork</li>
                     <li>Other</li>
-                    <li> <a href= {endpoint} rel="noopener noreferrer"> Resume </a> </li>
+                    <li> <a href= {endpoint} > Resume </a> </li>
                 </ul>
             </div>
         </>
