@@ -143,6 +143,6 @@ app.get('/resume', async (req, res) => {
 
   })
 
-  app.listen(5173, () => console.log("Server started on port 5173!") )
+  app.listen(import.meta.env.PORT || 3001 )
 
   export default app //for serverless deployments in vercel
