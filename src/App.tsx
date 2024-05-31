@@ -3,8 +3,8 @@
 //import viteLogo from '/vite.svg'
 import './css/App.css'
 import Sidebar from './components/Sidebar'
-
-//VERY IMPORTANT TO IMPOR THE CSS FILES HERE SO VITE WILL MINIFY THEM (DO NOT FORGET THIS !!!!!! )
+import '../favicon.ico'
+//VERY IMPORTANT TO IMPORT THE CSS FILES HERE SO VITE WILL MINIFY THEM (DO NOT FORGET THIS !!!!!! )
 
 import './css/Sidebar.css'
 import './css/AboutPage.css'
