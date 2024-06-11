@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 //use CommonJS for Netlify Functions
 
 console.log("Running api.cjs...")
