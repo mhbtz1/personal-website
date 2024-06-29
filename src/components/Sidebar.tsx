@@ -8,6 +8,13 @@ const aboutEndpoint = "https://habtem.onrender.com/about"
 
 function Sidebar() {
 
+    useEffect(() => {
+        const handleResize = () => {
+          setViewportWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+    )
+
     console.log("resume endpoint: ", endpoint)
     console.log("about endpoint: ", aboutEndpoint)
 
