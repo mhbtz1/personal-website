@@ -130,7 +130,7 @@ async function createExpressServer() {
     try {
       // 1. Read index.html
       let template = await fs.readFile(path.join(artifact_path, 'index.html'), { encoding : 'utf-8' }  )
-      const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/resume-ssr.tsx') ))
+      const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/entry-server.tsx') ))
       const { resume } = await render.renderResume()
       const html2 = template.replace('<!--resumeContent -->', resume)
         // 5. Inject the app-rendered HTML into the template.
@@ -146,8 +146,20 @@ async function createExpressServer() {
 
     })
 
-    app.listen(port, () => console.log(`Connected to port ${port}`))
+  app.get("/articles", async (req, res) => {
+    let template = await fs.readFile(path.join(artifact_path, 'index.html'), { encoding : 'utf-8' }  )
+    const render = (await vite.ssrLoadModule(path.join(__dirname, '../src/entry-server.tsx') ))
+    const { article } = await render.renderArticles();
+    const html2 = template.replace('<!--articleContent-->', article);
+    res.status(200).send(html2)
+  })
 
-  }
+  app.get("/articles/:id", async (req, res) => {
 
-  createExpressServer()
+  })
+
+  app.listen(port, () => console.log(`Connected to port ${port}`))
+}
+
+
+createExpressServer()

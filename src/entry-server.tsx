@@ -2,6 +2,7 @@ import ReactDOMServer from 'react-dom/server';
 import App from './App.tsx'
 import AboutPage from './components/AboutPage.tsx'
 import Resume from './components/Resume.tsx'
+import Article from './components/Articles.tsx'
 import React from 'react'
 
 export function render() {
@@ -25,3 +26,13 @@ export function renderResume() {
     )
     return { resume }
 }
+
+export function renderArticles() {
+    const article = ReactDOMServer.renderToString(
+        <React.StrictMode>
+            <Article/>
+        </React.StrictMode>
+    )
+    return { article }
+}
+

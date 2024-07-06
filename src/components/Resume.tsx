@@ -3,7 +3,8 @@ import { useEffect, useState} from 'react';
 console.log("Running Resume.tsx")
 
 function Resume() {
-    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  /*  
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         const handleResize = () => {
@@ -11,7 +12,8 @@ function Resume() {
         };
         window.addEventListener('resize', handleResize);
     )
-    
+    */
+
     return  <>
              <iframe src='/MMH_060824.pdf' width="100%" height="100%"> </iframe>
             </>
