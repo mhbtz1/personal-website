@@ -5,7 +5,7 @@ import { lime, purple, yellow } from '@mui/material/colors';
 
 const endpoint = "https://habtem.onrender.com/resume"
 const aboutEndpoint = "https://habtem.onrender.com/about"   
-const technicalEndpoint = "http://localhost:4000/articles"    
+const technicalEndpoint = "http://habtem.onrender.com/articles"    
 
 function Sidebar() {
 
