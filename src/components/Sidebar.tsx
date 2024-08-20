@@ -40,12 +40,12 @@ function Sidebar() {
                 </div>
                 <ul>
                     <ThemeProvider theme={theme}>
-                        <li> <Button variant="contained" href={aboutEndpoint} style={{'width' : '200px', 'height': '20px'}}> <p style={listStyles}> About </p> </Button> </li>
-                        <li> <Button variant="contained" href={technicalEndpoint} style={{'width': '200px', 'height' : '20px'}}> <p style={listStyles}> Technical Articles </p> </Button> </li>
-                        <li> <Button variant="contained" style={{'width' : '200px', 'height': '20px'}}> <p style={listStyles}> Projects</p> </Button> </li>
-                        <li> <Button variant="contained" style={{'width' : '200px', 'height' : '20px'}}> <p style={listStyles}> Upwork </p> </Button> </li>
-                        <li> <Button variant="contained" style={{'width' : '200px', 'height' : '20px'}}> <p style={listStyles}> Other </p> </Button> </li>
-                        <li> <Button variant="contained" href={endpoint} style={{'width' : '200px', 'height' : '20px'}}> <p style={listStyles}> Resume </p> </Button> </li>
+                        <li> <Button variant="contained" href={aboutEndpoint} style={{'width' : '12vw', 'height': '1.25vw'}}> <p style={listStyles}> About </p> </Button> </li>
+                        <li> <Button variant="contained" href={technicalEndpoint} style={{'width': '12vw', 'height' : '1.25vw'}}> <p style={listStyles}> Technical Articles </p> </Button> </li>
+                        <li> <Button variant="contained" style={{'width' : '12vw', 'height': '1.25vw'}}> <p style={listStyles}> Projects</p> </Button> </li>
+                        <li> <Button variant="contained" style={{'width' : '12vw', 'height' : '1.25vw'}}> <p style={listStyles}> Upwork </p> </Button> </li>
+                        <li> <Button variant="contained" style={{'width' : '12vw', 'height' : '1.25vw'}}> <p style={listStyles}> Other </p> </Button> </li>
+                        <li> <Button variant="contained" href={endpoint} style={{'width' : '12vw', 'height' : '1.25vw'}}> <p style={listStyles}> Resume </p> </Button> </li>
                     </ThemeProvider>
                 </ul>
             </div>
