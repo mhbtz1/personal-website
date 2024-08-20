@@ -1,3 +1,4 @@
+/*
 import "../css/Sidebar.css"
 import { Button } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -8,15 +9,6 @@ const aboutEndpoint = "https://habtem.onrender.com/about"
 const technicalEndpoint = "http://habtem.onrender.com/articles"    
 
 function Sidebar() {
-
-    /*
-    useEffect(() => {
-        const handleResize = () => {
-          setViewportWidth(window.innerWidth);
-        };
-        window.addEventListener('resize', handleResize);
-    )
-    */
 
     console.log("resume endpoint: ", endpoint)
     console.log("about endpoint: ", aboutEndpoint)
@@ -51,6 +43,46 @@ function Sidebar() {
             </div>
         </>
 
+}
+
+export default Sidebar;
+*/
+
+
+import React from 'react';
+import { Button } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const endpoint = "https://habtem.onrender.com/resume";
+const aboutEndpoint = "https://habtem.onrender.com/about";
+const technicalEndpoint = "http://habtem.onrender.com/articles";
+
+function Sidebar() {
+  const theme = createTheme({
+    palette: {
+      primary: { main: '#FFFFFF' },
+      secondary: { main: '#FFFFFF' }
+    },
+  });
+
+  return (
+    <div className="sidebar">
+      <h2>Matthew Habtezgi</h2>
+      <div className="sidebar-image">
+        <img src="/IMG_1295.jpg" alt="Profile" />
+      </div>
+      <ThemeProvider theme={theme}>
+        <nav>
+          <Button variant="contained" href={aboutEndpoint}>About</Button>
+          <Button variant="contained" href={technicalEndpoint}>Technical Articles</Button>
+          <Button variant="contained">Projects</Button>
+          <Button variant="contained">Upwork</Button>
+          <Button variant="contained">Other</Button>
+          <Button variant="contained" href={endpoint}>Resume</Button>
+        </nav>
+      </ThemeProvider>
+    </div>
+  );
 }
 
 export default Sidebar;
