@@ -1,22 +1,10 @@
 import '../css/Resume.css'
-import { useEffect, useState} from 'react';
 console.log("Running Resume.tsx")
 
 function Resume() {
-  /*  
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleResize = () => {
-          setViewportWidth(window.innerWidth);
-        };
-        window.addEventListener('resize', handleResize);
-    )
-    */
-
-    return  <>
-             <iframe src='/MMH-082424.pdf' width="100%" height="100%"> </iframe>
-            </>
+    return  <div className="resume">
+             <iframe src='./public/MMH-082424.pdf' width="100%" height="100%"> </iframe>
+            </div>
 }
 
 export default Resume
