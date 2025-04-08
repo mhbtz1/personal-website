@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && npm install && npm install --save-prod @rollup/wasm-node && vite build --ssrManifest",
-    "start": "node api/server.cjs",
+    "build": "vite build",
+    "start": "serve dist",
     "deploy": "vercel login && vercel deploy --prod",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
