@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from "path"
 import cssnano from 'cssnano';
-import { viteStaticCopy } from 'vite-plugin-static-copy'
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,13 +16,6 @@ export default defineConfig({
   server: {
     hmr: {
       port: 3005,
-    },
-  },
-  css: {
-    postcss: {
-      plugins: [
-        cssnano(), // Enable CSS minification
-      ],
     },
   },
   esbuild: {

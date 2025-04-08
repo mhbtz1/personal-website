@@ -3,20 +3,17 @@
 //import viteLogo from '/vite.svg'
 import './css/App.css'
 import Sidebar from './components/Sidebar'
+import TestBox from './components/TestBox.tsx'
 import '../favicon.ico'
 //VERY IMPORTANT TO IMPORT THE CSS FILES HERE SO VITE WILL MINIFY THEM (DO NOT FORGET THIS !!!!!! )
-
-import './css/Sidebar.css'
-import './css/AboutPage.css'
-import './css/Resume.css'
-
 console.log("Importing App.tsx...")
 
 function App() {
 
   //todo: make sure main-content fetches content from the GET /about endpoint by default
   return <>
-              <Sidebar/>
+            <Sidebar/>
          </>
+
 }
 export default App
