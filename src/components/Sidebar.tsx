@@ -7,7 +7,7 @@ import Miscellaneous from './Miscellaneous';
 import Resume from './Resume';
 import LinkedIn from './LinkedIn';
 import '../css/Sidebar.css';
-import { Image } from 'next/image';
+import Image from 'next/image';
 
 function SidebarContent() {
   const location = useLocation();
@@ -78,7 +78,7 @@ function SidebarContent() {
         <div className="sidebar-header">
           <h1 className="sidebar-name">Matthew Habtezgi</h1>
           <p className="sidebar-tagline">Software Engineer & Researcher</p>
-        </div>
+        </div>  
         
         <div className="sidebar-image-container">
           <Image
