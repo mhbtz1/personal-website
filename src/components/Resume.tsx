@@ -1,5 +1,4 @@
 import '../css/Resume.css'
-console.log("Running Resume.tsx")
 
 function Resume() {
     return ( <iframe

@@ -70,16 +70,22 @@ body, html {
 /* Profile Image */
 .sidebar-image-container {
   margin-bottom: 2.5rem;
+  width: 11rem;
+  height: 11rem;
 }
 
 .sidebar-image {
-  width: 11rem;
-  height: 11rem;
+  width: 100%;
+  height: 100%;
+  max-width: 11rem;
+  max-height: 11rem;
+  aspect-ratio: 1 / 1;
   border-radius: 0.75rem;
   object-fit: cover;
   border: 1px solid #e5e7eb;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
 }
 
 .sidebar-image:hover {
@@ -219,9 +225,14 @@ body, html {
   }
 
   /* Slightly smaller profile on mobile */
-  .sidebar-image {
+  .sidebar-image-container {
     width: 9rem;
     height: 9rem;
+  }
+  
+  .sidebar-image {
+    max-width: 9rem;
+    max-height: 9rem;
   }
 
   .sidebar-name {
@@ -245,9 +256,14 @@ body, html {
     max-width: 280px;
   }
 
-  .sidebar-image {
+  .sidebar-image-container {
     width: 8rem;
     height: 8rem;
+  }
+  
+  .sidebar-image {
+    max-width: 8rem;
+    max-height: 8rem;
   }
 
   .sidebar-name {

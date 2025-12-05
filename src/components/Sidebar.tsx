@@ -7,7 +7,6 @@ import Miscellaneous from './Miscellaneous';
 import Resume from './Resume';
 import LinkedIn from './LinkedIn';
 import '../css/Sidebar.css';
-import Image from 'next/image';
 
 function SidebarContent() {
   const location = useLocation();
@@ -81,10 +80,14 @@ function SidebarContent() {
         </div>  
         
         <div className="sidebar-image-container">
-          <Image
+          <img
             src="/pfp-revised.jpg"
             alt="Matthew Habtezgi"
             className="sidebar-image"
+            width="176"
+            height="176"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
 
