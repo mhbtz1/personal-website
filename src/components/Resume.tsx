@@ -49,7 +49,7 @@ function Resume() {
   ];
 
   const handleDownloadPDF = () => {
-    window.open('/MMH-09162024.pdf', '_blank');
+    window.open('/Matthew-Habtezgi.pdf', '_blank');
   };
 
   return (
