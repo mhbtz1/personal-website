@@ -25,8 +25,8 @@ function Resume() {
       id: 1,
       company: '14.ai',
       role: 'Founding Engineer',
-      period: 'Present',
-      location: 'Remote',
+      period: 'Sep 2025 - Present',
+      location: 'San Francisco, CA',
       description: 'Building AI-powered solutions from the ground up',
       achievements: [
         'Led full-stack development of core platform',
