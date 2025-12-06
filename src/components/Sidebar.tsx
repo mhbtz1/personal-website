@@ -16,7 +16,7 @@ function SidebarContent() {
     { path: '/about', label: 'About' },
     { path: '/articles', label: 'Technical Articles' },
     { path: '/projects', label: 'Projects' },
-    { path: '/miscellaneous', label: 'Miscellaneous' },
+    /*{ path: '/miscellaneous', label: 'Miscellaneous' }*/
     { path: '/resume', label: 'Resume' },
   ];
 
@@ -75,7 +75,7 @@ function SidebarContent() {
       {/* Sidebar */}
       <div className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         <div className="sidebar-header">
-          <h1 className="sidebar-name">Matthew Habtezgi</h1>
+          <h1 className="sidebar-name"> <a style={{color: 'black'}} href="https://www.linkedin.com/in/matthew-habtezgi-b4511b1a9/" target="_blank" rel="noopener noreferrer">Matthew Habtezgi</a></h1>
           <p className="sidebar-tagline">Software Engineer & Researcher</p>
         </div>  
         
@@ -112,7 +112,7 @@ function SidebarContent() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/articles" element={<Article />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/miscellaneous" element={<Miscellaneous />} />
+          {/* <Route path="/miscellaneous" element={<Miscellaneous />} /> */}
           <Route path="/resume" element={<div style={{width: '100%', height: '100%' }}><Resume/></div>} />
           <Route path="/linkedin" element={<div style={{width: '100%', height: '100%' }}> <LinkedIn/></div>} />
         </Routes>
