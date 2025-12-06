@@ -7,6 +7,7 @@ import Miscellaneous from './Miscellaneous';
 import Resume from './Resume';
 import LinkedIn from './LinkedIn';
 import '../css/Sidebar.css';
+import { Content } from './Content';
 
 function SidebarContent() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function SidebarContent() {
     { path: '/about', label: 'About' },
     { path: '/articles', label: 'Technical Articles' },
     { path: '/projects', label: 'Projects' },
+    { path: '/content', label: 'Videos' },
     /*{ path: '/miscellaneous', label: 'Miscellaneous' }*/
     { path: '/resume', label: 'Resume' },
   ];
@@ -113,6 +115,7 @@ function SidebarContent() {
           <Route path="/articles" element={<Article />} />
           <Route path="/projects" element={<Projects />} />
           {/* <Route path="/miscellaneous" element={<Miscellaneous />} /> */}
+          <Route path="/content" element={<Content />} />
           <Route path="/resume" element={<div style={{width: '100%', height: '100%' }}><Resume/></div>} />
           <Route path="/linkedin" element={<div style={{width: '100%', height: '100%' }}> <LinkedIn/></div>} />
         </Routes>
