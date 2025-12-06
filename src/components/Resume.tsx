@@ -119,6 +119,25 @@ function Resume() {
         </button>
       </div>
 
+      {/* Education Section */}
+      <section className="resume-section">
+        <h2 className="section-title">Education</h2>
+        <div className="education-grid">
+          {education.map((edu) => (
+            <div key={edu.id} className="education-card">
+              <div className="card-header">
+                <div>
+                  <h3 className="institution-name">{edu.institution}</h3>
+                  <p className="degree-title">{edu.degree}</p>
+                </div>
+                <span className="period">{edu.period}</span>
+              </div>
+              <p className="education-details">{edu.details}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      
       {/* Work Experience Section */}
       <section className="resume-section">
         <h2 className="section-title">Work Experience</h2>
@@ -157,24 +176,6 @@ function Resume() {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section className="resume-section">
-        <h2 className="section-title">Education</h2>
-        <div className="education-grid">
-          {education.map((edu) => (
-            <div key={edu.id} className="education-card">
-              <div className="card-header">
-                <div>
-                  <h3 className="institution-name">{edu.institution}</h3>
-                  <p className="degree-title">{edu.degree}</p>
-                </div>
-                <span className="period">{edu.period}</span>
-              </div>
-              <p className="education-details">{edu.details}</p>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
