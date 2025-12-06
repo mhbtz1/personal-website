@@ -29,13 +29,62 @@ function Resume() {
       location: 'San Francisco, CA',
       description: 'Building AI-powered solutions from the ground up',
       achievements: [
-        'Led full-stack development of core platform',
-        'Architected scalable infrastructure',
-        'Implemented ML model deployment pipeline'
+        'Built core integrations for MCP, Voice Assistants, and document understanding flows',
+        'Built eval harnesses for evaluating and improving the performance of the agents platform',
       ],
-      technologies: ['React', 'TypeScript', 'Python', 'AWS']
+      technologies: ['Effect.ts', 'React', 'Tanstack', 'Vercel', 'Supabase']
     },
-    // Add more experiences here
+    {
+      id: 2,
+      company: 'Structify',
+      role: 'Machine Learning Engineer',
+      description: 'Building data pipelines + models for building web agents',
+      period: 'Feb 2024 - Sep 2024',
+      location: 'New York, NY',
+      achievements: [
+        "Implemented data pipelines for collecting multimodal text-image data for SFT and DPO datasets for VLMs and scalable recommendation systems utilizing vector, graph, and relational databases",
+        "Implemented API endpoints, observability, and general business logic on our Rust backend. Used Python for data collection / augmentation, and adding custom logic to our Python SDK, and other customer specific integrations"
+      ],
+      technologies: ['Python', 'Rust', 'PostgreSQL', 'Redis', 'Docker', 'AWS']
+
+    },
+    {
+      id: 3,
+      company: 'Amazon Web Services',
+      role: "Software Engineer",
+      period: 'Jun 2023 - Aug 2023',
+      location: 'Cupertino, CA',
+      description: 'Working on embedded firmware for baremetal servers',
+      achievements: [
+        "Worked for AWS Hardware Engineering Services in the BIOS+UEFI Firmware Development team working on optimizing hardware interrupts from CPU-BMC communication over SSIF interface on Intel-based baremetal servers.",
+        "Worked with Linux kernel to perform telemetry on hardware interrupts and automate firmware testing, and built API servers / microservices with Docker for data access. Used C, Python, x86 Assembly with embedded Linux, AWS CDK and SQL. Improved data infrastructure and optimized hardware interrupt processing by a 15 percent margin."
+      ],
+      technologies: ['C', 'Python', 'x86 Assembly', 'Docker', 'AWS CDK', 'SQL']
+    },
+    {
+      id: 4,
+      company: 'MIT CSAIL',
+      role: 'Undergraduate Researcher',
+      period: 'Sep 2024 - Jun 2025',
+      location: 'Cambridge, MA',
+      description: 'Working on formal verification of software and hardware systems',
+      achievements: [
+        'Worked on the Koika project writing code for verifying security properties on multiprocessor machines using Coq. Working on  the ATL project formally verifying tensor compilers on C programs in Fall 2024.'
+      ],
+      technologies: ['Rocq', 'Coq', 'PLT']
+    },
+    {
+      id: 5,
+      company: 'Cryptoclear',
+      role: 'Software Engineer',
+      period: 'Jun 2022 - Aug 2022',
+      location: 'San Francisco, CA',
+      description: 'Working on a web application for tracking cryptocurrency transactions',
+      achievements: [
+        "Developed gradient boosting models, hyperparameter tuning methods and bagging classifiers in model construction. Used Apache Spark and Parquet for data engineering and developing ETL pipelines to aid with inference and building training datasets. Used Go-Ethereum for fetching blockchain data and other Web3 technologies."
+      ],
+      technologies: ['C++', 'Python', 'Apache Spark', 'Parquet', 'Go-Ethereum']
+    }
   ];
 
   const education: Education[] = [
