@@ -54,11 +54,7 @@ export function Content() {
                     className="twitter-tweet" 
                     data-media-max-width="560"
                 >
-                    <p lang="en" dir="ltr">
-                        When we say onboarding starts at arrival, we&apos;re not kidding.<br/><br/>
-                        Welcome, Matthew. <a href="https://t.co/66JmLr92Ov">pic.twitter.com/66JmLr92Ov</a>
-                    </p>
-                    &mdash; Michael Fester (@michaelfester) <a href="https://twitter.com/michaelfester/status/1973061840625086483?ref_src=twsrc%5Etfw">September 30, 2025</a>
+                     <a href="https://twitter.com/michaelfester/status/1973061840625086483?ref_src=twsrc%5Etfw"></a>
                 </blockquote>
             </div>
         </div>
