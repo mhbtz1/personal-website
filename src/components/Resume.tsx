@@ -77,7 +77,7 @@ function Resume() {
       id: 5,
       company: 'Cryptoclear',
       role: 'Software Engineer',
-      period: 'Jun 2022 - Aug 2022',
+      period: 'Jan 2022 - Nov 2022',
       location: 'San Francisco, CA',
       description: 'Working on a web application for tracking cryptocurrency transactions',
       achievements: [
