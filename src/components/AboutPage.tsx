@@ -6,6 +6,7 @@ export function AboutPage() {
             <p className="about-intro">
                 Hello, I am Matthew Habtezgi. I am a software engineer and researcher, currently working as a founding engineer at <a href="https://14.ai" target="_blank" rel="noopener noreferrer"> 14.ai</a>.
             </p>
+            <p className="about-intro"> I recently graduated from <a href="https://www.mit.edu" target="_blank" rel="noopener noreferrer"> MIT </a>, and am currently based in the SF Bay Area. </p>
             
             <h2 className="about-section-title">Areas of Interest</h2>
             
