@@ -41,10 +41,10 @@ function Resume() {
   const education: Education[] = [
     {
       id: 1,
-      institution: 'Your University',
-      degree: 'Computer Science & Mathematics',
-      period: '20XX - Present',
-      details: 'Focus on software engineering and formal methods'
+      institution: 'Massachusetts Institute of Technology',
+      degree: 'Computer Science & Engineering,  Mathematics',
+      period: '2021-2025',
+      details: 'Relevant Courses: Systems Engineering (6.1810), Computer Architecture (6.1910), Theory of Computation (18.4041), TinyML and Efficient Deep Learning Computing (6.5940)'
     }
   ];
 
