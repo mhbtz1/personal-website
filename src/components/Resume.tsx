@@ -78,7 +78,7 @@ function Resume() {
       company: 'Cryptoclear',
       role: 'Software Engineer',
       period: 'Jan 2022 - Nov 2022',
-      location: 'San Francisco, CA',
+      location: 'Boston, MA',
       description: 'Working on a web application for tracking cryptocurrency transactions',
       achievements: [
         "Developed gradient boosting models, hyperparameter tuning methods and bagging classifiers in model construction. Used Apache Spark and Parquet for data engineering and developing ETL pipelines to aid with inference and building training datasets. Used Go-Ethereum for fetching blockchain data and other Web3 technologies."
@@ -93,7 +93,7 @@ function Resume() {
       institution: 'Massachusetts Institute of Technology',
       degree: 'Computer Science & Engineering,  Mathematics',
       period: '2021-2025',
-      details: 'Relevant Courses: Systems Engineering (6.1810), Computer Architecture (6.1910), Theory of Computation (18.4041), TinyML and Efficient Deep Learning Computing (6.5940)'
+      details: 'Relevant Courses: Operating Systems Engineering (6.1810), Computer Architecture (6.1910), Theory of Computation (18.4041), TinyML and Efficient Deep Learning Computing (6.5940), Inference and Information (6.7800)'
     }
   ];
 
@@ -137,7 +137,7 @@ function Resume() {
           ))}
         </div>
       </section>
-      
+
       {/* Work Experience Section */}
       <section className="resume-section">
         <h2 className="section-title">Work Experience</h2>
