@@ -98,7 +98,7 @@ function Resume() {
   ];
 
   const handleDownloadPDF = () => {
-    window.open('/Matthew-Habtezgi.pdf', '_blank');
+    window.open('/Matthew_Habtezgi.pdf', '_blank');
   };
 
   return (
