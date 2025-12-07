@@ -10,7 +10,7 @@ function Article() {
 
     return (
         <div className="articles">
-            <h2 className="articles-title">Technical Writings</h2>
+            <h2 className="articles-title"> Posts </h2>
             <ul className="articles-list">
                 {articles.map((article, index) => (
                     <li key={article.id} className="article-item">

@@ -15,7 +15,7 @@ function SidebarContent() {
 
   const navItems = [
     { path: '/about', label: 'About' },
-    { path: '/articles', label: 'Technical Articles' },
+    { path: '/articles', label: 'Posts' },
     { path: '/projects', label: 'Projects' },
     { path: '/content', label: 'Videos' },
     /*{ path: '/miscellaneous', label: 'Miscellaneous' }*/
