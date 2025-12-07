@@ -5,6 +5,7 @@ interface Project {
     title: string,
     description: string,
     hyperlinkedContent?: { linkName: string, link: string },
+    paperLink?: string,
 }
 const projects: Project[] = [
     {
@@ -27,9 +28,10 @@ const projects: Project[] = [
     },
     {
         link: "https://github.com/mhbtz1/duo-attention",
-        title: "Image-Based DuoAttention Implementation",
-        description: "An implementation of the DuoAttention architecture for image-based tasks linked",
-        hyperlinkedContent: { link: "https://github.com/mhbtz1/duo-attention", linkName: "here." },
+        title: "VLM-Based DuoAttention Implementation",
+        description: "An implementation of the DuoAttention architecture using vison-language models linked",
+        hyperlinkedContent: { link: "https://github.com/mhbtz1/duo-attention", linkName: "here" },
+        paperLink: "https://arxiv.org/abs/2410.10819"
     }
 ]
 
@@ -49,25 +51,11 @@ function Projects(){
                         </svg>
                     </div>
                     <h3 className="interest-title"> { project.title } </h3>
-                    <p className="interest-description"> {project.description} {project.hyperlinkedContent && <a href={project.hyperlinkedContent.link} target="_blank" rel="noopener noreferrer"> {project.hyperlinkedContent.linkName} </a>} </p>
+                    <p className="interest-description"> {project.description} {project.hyperlinkedContent && <a href={project.hyperlinkedContent.link} target="_blank" rel="noopener noreferrer"> {project.hyperlinkedContent.linkName} </a>} 
+                   {project.paperLink && (<> <span> implementing this paper: </span><a href={project.paperLink} target="_blank" rel="noopener noreferrer"> DuoAttention </a> </>)} </p>
                 </div>
             </div>
-        ))}
-        {/*
-        <div className="interest-grid" onClick={() => window.open("https://effectful-prompt-optimizer.onrender.com", "_blank")}>
-            <div className="interest-card">
-                <div className="interest-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                        <line x1="8" y1="21" x2="16" y2="21"></line>
-                        <line x1="12" y1="17" x2="12" y2="21"></line>
-                    </svg>
-                </div>
-                <h3 className="interest-title">Effectful Agent Optimizer </h3>
-                <p className="interest-description"> A tool for optimizing agents using a paradigm for <a href="https://arxiv.org/abs/2510.04618" target="_blank" rel="noopener noreferrer"> agentic context engineering. </a> </p>
-            </div>
-        </div>
-        */}
+        ))} 
     </div>
 </>)
 }
