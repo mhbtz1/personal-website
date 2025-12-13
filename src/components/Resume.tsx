@@ -50,6 +50,18 @@ function Resume() {
     },
     {
       id: 3,
+      company: 'MIT CSAIL',
+      role: 'Undergraduate Researcher',
+      period: 'Sep 2024 - Jun 2025',
+      location: 'Cambridge, MA',
+      description: 'Working on formal verification of software and hardware systems',
+      achievements: [
+        'Worked on the Koika project writing code for verifying security properties on multiprocessor machines using Coq. Working on  the ATL project formally verifying tensor compilers on C programs in Fall 2024.'
+      ],
+      technologies: ['Rocq', 'Coq', 'PLT']
+    },
+    {
+      id: 4,
       company: 'Amazon Web Services',
       role: "Software Engineer",
       period: 'Jun 2023 - Aug 2023',
@@ -62,18 +74,6 @@ function Resume() {
       technologies: ['C', 'Python', 'x86 Assembly', 'Docker', 'AWS CDK', 'SQL']
     },
     {
-      id: 4,
-      company: 'MIT CSAIL',
-      role: 'Undergraduate Researcher',
-      period: 'Sep 2024 - Jun 2025',
-      location: 'Cambridge, MA',
-      description: 'Working on formal verification of software and hardware systems',
-      achievements: [
-        'Worked on the Koika project writing code for verifying security properties on multiprocessor machines using Coq. Working on  the ATL project formally verifying tensor compilers on C programs in Fall 2024.'
-      ],
-      technologies: ['Rocq', 'Coq', 'PLT']
-    },
-    {
       id: 5,
       company: 'Cryptoclear',
       role: 'Software Engineer',
@@ -83,7 +83,7 @@ function Resume() {
       achievements: [
         "Developed gradient boosting models, hyperparameter tuning methods and bagging classifiers in model construction. Used Apache Spark and Parquet for data engineering and developing ETL pipelines to aid with inference and building training datasets. Used Go-Ethereum for fetching blockchain data and other Web3 technologies."
       ],
-      technologies: ['C++', 'Python', 'Apache Spark', 'Parquet', 'Go-Ethereum']
+      technologies: ['C++', 'Python', 'PySpark', 'Apache Parquet', 'Go-Ethereum']
     }
   ];
 
@@ -91,7 +91,7 @@ function Resume() {
     {
       id: 1,
       institution: 'Massachusetts Institute of Technology',
-      degree: 'Computer Science & Engineering,  Mathematics',
+      degree: 'BSc. in Computer Science & Engineering, BSc. in Mathematics',
       period: '2021-2025',
       details: 'Relevant Courses: Operating Systems Engineering (6.1810), Computer Architecture (6.1910), Theory of Computation (18.4041), TinyML and Efficient Deep Learning Computing (6.5940), Inference and Information (6.7800)'
     }
@@ -110,6 +110,7 @@ function Resume() {
           <p className="resume-subtitle">Building elegant solutions to complex problems</p>
         </div>
         <button className="download-pdf-button" onClick={handleDownloadPDF}>
+          {/* eye icon */}
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>
