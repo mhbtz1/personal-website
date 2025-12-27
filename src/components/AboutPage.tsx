@@ -4,7 +4,7 @@ export function AboutPage() {
     return (
         <div className="about">
             <p className="about-intro">
-                Hello, I am Matthew Habtezgi. I am a software engineer and researcher, currently working as a founding engineer at <a href="https://14.ai" target="_blank" rel="noopener noreferrer"> 14.ai</a>.
+                Hello, I am Matthew Habtezgi. I am a software engineer and researcher, currently working as a founding engineer at <a href="https://bronco.ai" target="_blank" rel="noopener noreferrer"> Bronco AI</a>.
             </p>
             <p className="about-intro"> I recently graduated from <a href="https://www.mit.edu" target="_blank" rel="noopener noreferrer"> MIT </a>, and am currently based in the SF Bay Area. </p>
             
