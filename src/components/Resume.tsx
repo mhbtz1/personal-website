@@ -1,8 +1,10 @@
 import '../css/Resume.css'
+import { useNavigate } from 'react-router-dom';
 
 interface Experience {
   id: number;
   company: string;
+  link?: string;
   role: string;
   period: string;
   location: string;
@@ -20,23 +22,43 @@ interface Education {
 }
 
 function Resume() {
+  const navigate = useNavigate();
+  const handleExperienceClick = (link: string | undefined) => {
+    if (link) {
+      window.open(link, '_blank');
+    }
+  };
   const experiences: Experience[] = [
     {
       id: 1,
-      company: '14.ai',
+      company: 'Bronco AI',
+      link: 'https://bronco.ai',
       role: 'Founding Engineer',
-      period: 'Sep 2025 - Present',
+      period: 'Jan 2025 - Present',
+      location: 'San Francisco, CA',
+      description: 'Building AI agents for chip design verification flows',
+      technologies: ['TS/JS','Python', 'C++', 'Verilog', 'SystemVerilog'],
+      achievements: [
+      ]
+    },
+    {
+      id: 2,
+      company: '14.ai',
+      link: 'https://14.ai',
+      role: 'Founding Engineer',
+      period: 'Sep 2025 - Jan 2025',
       location: 'San Francisco, CA',
       description: 'Building AI-powered solutions from the ground up',
       achievements: [
-        'Built core integrations for MCP, Voice Assistants, and document understanding flows',
+        'Built core integrations and infrastructure for MCP, Voice Assistants, and document understanding flows',
         'Built eval harnesses for evaluating and improving the performance of the agents platform',
       ],
       technologies: ['Effect.ts', 'React', 'Tanstack', 'Vercel', 'Supabase']
     },
     {
-      id: 2,
+      id: 3,
       company: 'Structify',
+      link: 'https://structify.ai',
       role: 'Machine Learning Engineer',
       description: 'Building data pipelines + models for building web agents',
       period: 'Feb 2024 - Sep 2024',
@@ -49,8 +71,9 @@ function Resume() {
 
     },
     {
-      id: 3,
+      id: 4,
       company: 'MIT CSAIL',
+      link: 'https://www.csail.mit.edu/research/programming-languages-verification',
       role: 'Undergraduate Researcher',
       period: 'Sep 2024 - Jun 2025',
       location: 'Cambridge, MA',
@@ -61,8 +84,9 @@ function Resume() {
       technologies: ['Rocq', 'Coq', 'PLT']
     },
     {
-      id: 4,
+      id: 5,
       company: 'Amazon Web Services',
+      link: 'https://aws.amazon.com',
       role: "Software Engineer",
       period: 'Jun 2023 - Aug 2023',
       location: 'Cupertino, CA',
@@ -74,7 +98,7 @@ function Resume() {
       technologies: ['C', 'Python', 'x86 Assembly', 'Docker', 'AWS CDK', 'SQL']
     },
     {
-      id: 5,
+      id: 6,
       company: 'Cryptoclear',
       role: 'Software Engineer',
       period: 'Jan 2022 - Nov 2022',
@@ -102,7 +126,9 @@ function Resume() {
   };
 
   return (
-    <div className="resume-container">
+    <div className="resume-container" onClick={
+      () => handleExperienceClick(experiences[0].link)
+    }>
       {/* Header with Download Button */}
       <div className="resume-header">
         <div>
@@ -143,7 +169,7 @@ function Resume() {
         <h2 className="section-title">Work Experience</h2>
         <div className="experience-grid">
           {experiences.map((exp) => (
-            <div key={exp.id} className="experience-card">
+            <div key={exp.id} className="experience-card" onClick={() => handleExperienceClick(exp.link)}>
               <div className="card-header">
                 <div>
                   <h3 className="company-name">{exp.company}</h3>
