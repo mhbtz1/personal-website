@@ -34,7 +34,7 @@ function Resume() {
       company: 'Bronco AI',
       link: 'https://bronco.ai',
       role: 'Founding Engineer',
-      period: 'Jan 2025 - Present',
+      period: 'Jan 2026 - Present',
       location: 'San Francisco, CA',
       description: 'Building AI agents for chip design verification flows',
       technologies: ['TS/JS','Python', 'C++', 'Verilog', 'SystemVerilog'],
@@ -46,12 +46,13 @@ function Resume() {
       company: '14.ai',
       link: 'https://14.ai',
       role: 'Founding Engineer',
-      period: 'Sep 2025 - Jan 2025',
+      period: 'Sep 2025 - Jan 2026',
       location: 'San Francisco, CA',
       description: 'Building AI-powered solutions from the ground up',
       achievements: [
         'Built core integrations and infrastructure for MCP, Voice Assistants, and document understanding flows',
         'Built eval harnesses for evaluating and improving the performance of the agents platform',
+        'Built core tracing / observability infrastructure for the agents platform'
       ],
       technologies: ['Effect.ts', 'React', 'Tanstack', 'Vercel', 'Supabase']
     },
