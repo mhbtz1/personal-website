@@ -22,12 +22,6 @@ interface Education {
 }
 
 function Resume() {
-  const navigate = useNavigate();
-  const handleExperienceClick = (link: string | undefined) => {
-    if (link) {
-      window.open(link, '_blank');
-    }
-  };
   const experiences: Experience[] = [
     {
       id: 1,
@@ -127,9 +121,7 @@ function Resume() {
   };
 
   return (
-    <div className="resume-container" onClick={
-      () => handleExperienceClick(experiences[0].link)
-    }>
+    <div className="resume-container">
       {/* Header with Download Button */}
       <div className="resume-header">
         <div>
