@@ -134,7 +134,6 @@ function Resume() {
       <div className="resume-header">
         <div>
           <h1 className="resume-title">Experience & Education</h1>
-          <p className="resume-subtitle">Building elegant solutions to complex problems</p>
         </div>
         <button className="download-pdf-button" onClick={handleDownloadPDF}>
           {/* eye icon */}
