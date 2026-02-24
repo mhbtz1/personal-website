@@ -9,7 +9,7 @@ interface Project {
 }
 const projects: Project[] = [
     {
-        link: "https://effectful-prompt-optimizer.onrender.com",
+        link: "https://github.com/mhbtz1/effectful-prompt-optimizer",
         title: "Effectful Agent Optimizer",
         description: "A tool for optimizing agents using a paradigm for agentic context engineering in",
         hyperlinkedContent: { link: "https://arxiv.org/abs/2510.04618", linkName: "this paper." },
