@@ -38,7 +38,7 @@ const projects: Project[] = [
 
 function Projects(){
     return (<>
-    <h2 className="projects-title"> Projects </h2>
+    <h2 className="projects-title"> Selected Projects </h2>
     <div className="flex flex-col">
         {projects.map((project) => (
             <div className="interest-grid" onClick={() => window.open(project.link, "_blank")}>
