@@ -161,7 +161,8 @@ function Resume() {
         <h2 className="section-title">Work Experience</h2>
         <div className="experience-grid">
           {experiences.map((exp) => (
-            <div key={exp.id} className="experience-card" onClick={() => handleExperienceClick(exp.link)}>
+            /* handleExperience(exp.link) */
+            <div key={exp.id} className="experience-card" onClick={() => {}}>
               <div className="card-header">
                 <div>
                   <h3 className="company-name">{exp.company}</h3>
