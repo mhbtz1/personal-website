@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OG card source</title>
+    <style>
+      @font-face {
+        font-family: 'Source Serif 4';
+        font-weight: 400;
+        src: url('/node_modules/@fontsource/source-serif-4/files/source-serif-4-latin-400-normal.woff2')
+          format('woff2');
+      }
+      @font-face {
+        font-family: 'Source Serif 4';
+        font-weight: 600;
+        src: url('/node_modules/@fontsource/source-serif-4/files/source-serif-4-latin-600-normal.woff2')
+          format('woff2');
+      }
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-weight: 400;
+        src: url('/node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2')
+          format('woff2');
+      }
+
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+
+      body {
+        /* Offprint tokens, inlined — this file renders outside the app. */
+        background: #fbfbfa;
+        color: #191a17;
+        font-family: 'Source Serif 4', Georgia, serif;
+        padding: 76px 84px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+
+      .avatar {
+        width: 84px;
+        height: 84px;
+        object-fit: cover;
+        object-position: center 22%;
+        border: 1px solid #e0e0db;
+      }
+
+      .domain {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #6d6f6a;
+      }
+
+      h1 {
+        font-size: 92px;
+        font-weight: 600;
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+      }
+
+      .lede {
+        margin-top: 26px;
+        font-size: 36px;
+        line-height: 1.42;
+        color: #4a4b46;
+        max-width: 28ch;
+      }
+
+      .rule {
+        border-top: 1px solid #e0e0db;
+        padding-top: 26px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      .tag {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 21px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6d6f6a;
+      }
+
+      .accent {
+        color: #3f5765;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <img class="avatar" src="/public/avatar.jpg" alt="" />
+      <span class="domain">habtem.dev</span>
+    </div>
+
+    <div>
+      <h1>Matthew&nbsp;Habtezgi</h1>
+      <p class="lede">Writing on computer systems, ML systems, and AI.</p>
+    </div>
+
+    <div class="rule">
+      <span class="tag">Software Engineer &amp; Researcher</span>
+      <span class="tag accent">SF Bay Area</span>
+    </div>
+  </body>
+</html>
