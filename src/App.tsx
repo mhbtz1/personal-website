@@ -1,19 +1,44 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
-import './css/App.css'
-import Sidebar from './components/Sidebar'
-import TestBox from './components/TestBox.tsx'
-import '../favicon.ico'
-//VERY IMPORTANT TO IMPORT THE CSS FILES HERE SO VITE WILL MINIFY THEM (DO NOT FORGET THIS !!!!!! )
-console.log("Importing App.tsx...")
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import About from './pages/About'
+import PostsIndex from './pages/PostsIndex'
+import Post from './pages/Post'
+import Projects from './pages/Projects'
+import Videos from './pages/Videos'
+import Resume from './pages/Resume'
+import NotFound from './pages/NotFound'
 
-function App() {
+/**
+ * Routes without a router, so the prerenderer can wrap them in a StaticRouter
+ * while the browser wraps them in a BrowserRouter.
+ */
+export function AppRoutes() {
+  return (
+    <Layout>
+      <Routes>
+        {/* Posts are the landing page — the writing is the point of the site. */}
+        <Route path="/" element={<PostsIndex />} />
+        <Route path="/posts/:slug" element={<Post />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/videos" element={<Videos />} />
+        <Route path="/resume" element={<Resume />} />
 
-  //todo: make sure main-content fetches content from the GET /about endpoint by default
-  return <>
-            <Sidebar/>
-         </>
+        {/* Legacy paths kept so previously-shared links keep resolving. */}
+        <Route path="/posts" element={<Navigate to="/" replace />} />
+        <Route path="/articles" element={<Navigate to="/" replace />} />
+        <Route path="/content" element={<Navigate to="/videos" replace />} />
 
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Layout>
+  )
 }
-export default App
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  )
+}

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: habtem-dev
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    # Serves the prerendered file for each route (see public/serve.json).
+    # Do NOT add `serve -s` here — a catch-all rewrite to index.html would
+    # serve the wrong document for every route except "/".
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: '20'

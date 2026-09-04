@@ -1,15 +1,53 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="L5LjdVHeGS9VRm5JTPmfgA" async></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" as="image" href="/pfp-revised.jpg" fetchpriority="high" />
-    <title> Matthew H's Website</title>
+
+    <!-- Replaced per route by scripts/prerender.mjs. In dev it stays as-is and
+         the <Seo> component fills the tags in at runtime. -->
+    <title>Matthew Habtezgi</title>
+    <!--app-head-->
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/pfp-revised.jpg" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Matthew Habtezgi — Posts"
+      href="/rss.xml"
+    />
+
+    <!-- 16 KB, 186x240 — sized for the 30px top-bar avatar. The full-size
+         pfp-revised.jpg (1.8 MB) is kept only for social cards. -->
+    <link rel="preload" as="image" href="/avatar.jpg" fetchpriority="high" />
+
+    <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14140f" media="(prefers-color-scheme: dark)" />
+
+    <!-- Resolve the theme before first paint so there is no light/dark flash. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
+    <script
+      src="https://analytics.ahrefs.com/analytics.js"
+      data-key="L5LjdVHeGS9VRm5JTPmfgA"
+      async
+    ></script>
   </head>
   <body>
-    <div id="root">
-    </div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>
