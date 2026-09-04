@@ -1,0 +1,204 @@
+/* ---------------------------------------------------------------------------
+   Long-form article body. Scoped to .prose.
+   Serif throughout; monospace only for code and figure captions.
+   --------------------------------------------------------------------------- */
+
+.prose {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: var(--leading-prose);
+  /* Bare URLs and long flag strings have no break opportunity and will push
+     the whole page sideways on a narrow screen without this. */
+  overflow-wrap: break-word;
+}
+
+.prose > * + * {
+  margin-top: 1.5rem;
+}
+
+/* --- Headings ----------------------------------------------------------- */
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--color-text);
+  scroll-margin-top: 2rem;
+}
+
+.prose h2 {
+  font-size: 1.375rem;
+  margin-top: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.prose h3 {
+  font-size: 1.1875rem;
+  margin-top: 2.25rem;
+}
+
+.prose h4 {
+  font-size: 1.0625rem;
+  margin-top: 1.75rem;
+}
+
+/* Autolinked heading anchors (rehype-autolink-headings). */
+.prose .heading-anchor {
+  margin-left: 0.375rem;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--color-text-subtle);
+  opacity: 0;
+  transition: opacity var(--motion);
+}
+
+.prose h2:hover .heading-anchor,
+.prose h3:hover .heading-anchor,
+.prose h4:hover .heading-anchor,
+.prose .heading-anchor:focus-visible {
+  opacity: 1;
+}
+
+/* --- Inline ------------------------------------------------------------- */
+
+.prose a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-rule-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--motion), text-decoration-color var(--motion);
+}
+
+.prose a:hover {
+  color: var(--color-active);
+  text-decoration-color: var(--color-active);
+}
+
+.prose strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* --- Lists -------------------------------------------------------------- */
+
+.prose ul,
+.prose ol {
+  padding-left: 1.375rem;
+}
+
+.prose li + li {
+  margin-top: 0.5rem;
+}
+
+.prose li::marker {
+  color: var(--color-text-subtle);
+}
+
+/* --- Code --------------------------------------------------------------- */
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.8125em;
+  background-color: var(--color-code-bg);
+  padding: 0.125em 0.3em;
+  color: var(--color-code-text);
+}
+
+.prose pre {
+  background-color: var(--color-code-bg);
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  padding: 1rem 1.125rem;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  /* Listings are allowed to run the full column width. */
+  margin-left: calc(var(--gutter) * -1);
+  margin-right: calc(var(--gutter) * -1);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* --- Tables ------------------------------------------------------------- */
+
+/* Wide tables scroll inside their own container; the page never scrolls
+   sideways. */
+.prose .table-scroll {
+  overflow-x: auto;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--color-rule);
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  text-align: left;
+}
+
+.prose th {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  border-bottom-color: var(--color-rule-strong);
+}
+
+/* --- Blockquote --------------------------------------------------------- */
+
+.prose blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--color-rule-strong);
+  color: var(--color-text-subtle);
+}
+
+/* --- Figures ------------------------------------------------------------ */
+
+.prose figure {
+  margin: 2.5rem 0;
+}
+
+.prose figcaption {
+  margin-top: 0.625rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--color-text-subtle);
+}
+
+.prose img {
+  border: 1px solid var(--color-rule);
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--color-rule);
+  margin: 3rem 0;
+}
+
+/* --- Math --------------------------------------------------------------- */
+/* KaTeX sets in Computer Modern, a serif — which is why this direction pairs
+   a serif body. Display math scrolls rather than widening the column. */
+
+.prose .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}

@@ -1,0 +1,10 @@
+.about-intro {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: var(--leading-prose);
+  max-width: var(--measure);
+}
+
+.about-intro p + p {
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,83 @@
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.post-title {
+  font-size: var(--text-2xl);
+  margin: 0.875rem 0 0.75rem;
+}
+
+.post-abstract {
+  color: var(--color-text-subtle);
+  font-size: var(--text-md);
+  line-height: var(--leading-prose);
+}
+
+.post-loading {
+  color: var(--color-text-subtle);
+}
+
+.post-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-rule);
+}
+
+/* --- Table of contents -------------------------------------------------- */
+/*
+   Hidden entirely below 1200px. Above it, the rail is fixed in the left
+   margin beside the centered column — so it costs the article no width, and
+   populating it after hydration shifts nothing.
+*/
+
+.post-toc {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .post-toc {
+    display: block;
+    position: fixed;
+    top: 6rem;
+    /* Half the viewport, back off half the column, then back off the rail
+       plus a 3rem gutter between the rail and the text. */
+    left: calc(50% - (var(--content-max) / 2) - 13rem);
+    width: 10rem;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .post-toc-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .post-toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .post-toc a {
+    font-size: var(--text-sm);
+    line-height: 1.35;
+    color: var(--color-text-subtle);
+    transition: color var(--motion);
+  }
+
+  .post-toc a:hover {
+    color: var(--color-text);
+  }
+
+  .post-toc-on {
+    color: var(--color-text);
+  }
+
+  .post-toc-sub {
+    padding-left: 0.75rem;
+  }
+}

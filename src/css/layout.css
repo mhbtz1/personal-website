@@ -1,0 +1,159 @@
+/* ---------------------------------------------------------------------------
+   Site shell — a single centered column.
+
+   There is no sidebar, no drawer, and no sticky chrome. The top bar scrolls
+   away with the page; the reader is left alone with the text.
+   --------------------------------------------------------------------------- */
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1;
+}
+
+/* --- Top bar ------------------------------------------------------------ */
+
+.topbar {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 1rem;
+  display: flex;
+  /* Centered rather than baseline-aligned, because the identity block now
+     contains an image — baseline alignment on a replaced element sits it on
+     the text baseline and drags the row height around. */
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.topbar-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-width: 0;
+}
+
+.topbar-avatar {
+  /* Fixed box + intrinsic ratio: it can never shrink, stretch, or shift
+     layout while loading. Square with a hairline rather than a circle, to
+     stay inside the no-radius rule the rest of the system follows. */
+  flex: none;
+  width: 1.875rem;
+  height: 1.875rem;
+  object-fit: cover;
+  /* Source is a 186x240 portrait; bias the square crop upward so it frames
+     the face rather than the centre of the torso. */
+  object-position: center 22%;
+  border: 1px solid var(--color-rule);
+  transition: border-color var(--motion);
+}
+
+.topbar-name {
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: color var(--motion);
+}
+
+.topbar-identity:hover .topbar-name {
+  color: var(--color-active);
+}
+
+.topbar-identity:hover .topbar-avatar {
+  border-color: var(--color-rule-strong);
+}
+
+.topbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  /* Row gap is sized so that when the nav wraps on a narrow screen the
+     expanded tap targets below sit flush rather than overlapping. */
+  gap: 1.25rem 1.125rem;
+}
+
+/* --- Tap targets -------------------------------------------------------- */
+/*
+   The chrome type is 11px, which leaves links ~17px tall — under the 24px
+   WCAG 2.5.8 minimum and well under the 44px touch guideline. These
+   pseudo-elements enlarge the hit area without occupying any layout space, so
+   the visual spacing of the design is untouched.
+*/
+
+/* Standalone navigation controls only. Links sitting inline inside a sentence
+   are exempt under WCAG 2.5.8 and are deliberately left alone — padding them
+   out would break the line rhythm of the prose. */
+.topbar-nav a,
+.site-footer-links a,
+.theme-toggle,
+.post-footer a {
+  position: relative;
+}
+
+.topbar-nav a::after,
+.site-footer-links a::after,
+.theme-toggle::after,
+.post-footer a::after {
+  content: '';
+  position: absolute;
+  inset: -0.625rem -0.375rem;
+}
+
+/* --- Footer ------------------------------------------------------------- */
+
+.site-footer {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 1.25rem var(--gutter) 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--color-rule);
+}
+
+.site-footer-links {
+  display: flex;
+  gap: 1.125rem;
+}
+
+/* --- Theme toggle ------------------------------------------------------- */
+/* Text-only, sits in the footer. No icon, no border, no box. */
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  transition: color var(--motion);
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    padding-top: 1.5rem;
+  }
+
+  .topbar-avatar {
+    width: 1.625rem;
+    height: 1.625rem;
+  }
+}

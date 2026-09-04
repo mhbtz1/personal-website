@@ -1,0 +1,89 @@
+/* ---------------------------------------------------------------------------
+   Syntax highlighting (highlight.js class names), tuned to the Offprint
+   paper palette — muted and low-contrast so listings sit inside the page
+   rather than shouting from it.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --hl-comment: #8a8a7e;
+  --hl-keyword: #7d4a52;
+  --hl-string: #4a6350;
+  --hl-number: #6a5b8a;
+  --hl-function: #3f5765;
+  --hl-type: #7a6134;
+  --hl-variable: #24251f;
+}
+
+:root[data-theme='dark'] {
+  --hl-comment: #7d7b70;
+  --hl-keyword: #d09aa2;
+  --hl-string: #9dbfa6;
+  --hl-number: #b3a5d1;
+  --hl-function: #8fb0c2;
+  --hl-type: #d1b57e;
+  --hl-variable: #e8e7df;
+}
+
+.hljs {
+  color: var(--color-code-text);
+  background: transparent;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--hl-comment);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag,
+.hljs-name,
+.hljs-strong {
+  color: var(--hl-keyword);
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: var(--hl-string);
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id {
+  color: var(--hl-number);
+}
+
+.hljs-title,
+.hljs-title.function_,
+.hljs-section {
+  color: var(--hl-function);
+}
+
+.hljs-type,
+.hljs-class .hljs-title,
+.hljs-title.class_,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-params {
+  color: var(--hl-type);
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attr,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: var(--hl-variable);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}

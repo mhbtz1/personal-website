@@ -1,0 +1,40 @@
+.empty-state {
+  color: var(--color-text-subtle);
+  padding: 2rem 0;
+}
+
+/* --- Elsewhere ---------------------------------------------------------- */
+
+.elsewhere {
+  margin-top: 4rem;
+}
+
+.elsewhere-heading {
+  margin-bottom: 1rem;
+}
+
+/* Element+class so this reliably beats `.row { display: block }` in base.css —
+   per-page stylesheets are injected before the base layer, so a bare
+   `.elsewhere-row` would lose the tie on source order. */
+a.elsewhere-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.875rem 0;
+}
+
+.elsewhere-title {
+  transition: color var(--motion);
+}
+
+.elsewhere-row:hover .elsewhere-title {
+  color: var(--color-active);
+}
+
+@media (max-width: 480px) {
+  .elsewhere-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
