@@ -4,7 +4,6 @@ import About from './pages/About'
 import PostsIndex from './pages/PostsIndex'
 import Post from './pages/Post'
 import Projects from './pages/Projects'
-import Videos from './pages/Videos'
 import Resume from './pages/Resume'
 import NotFound from './pages/NotFound'
 
@@ -21,13 +20,11 @@ export function AppRoutes() {
         <Route path="/posts/:slug" element={<Post />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/videos" element={<Videos />} />
         <Route path="/resume" element={<Resume />} />
 
         {/* Legacy paths kept so previously-shared links keep resolving. */}
         <Route path="/posts" element={<Navigate to="/" replace />} />
         <Route path="/articles" element={<Navigate to="/" replace />} />
-        <Route path="/content" element={<Navigate to="/videos" replace />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
