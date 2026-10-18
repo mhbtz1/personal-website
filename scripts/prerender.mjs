@@ -22,9 +22,9 @@ const distDir = join(root, 'dist')
 const REDIRECTS = {
   '/posts': '/writing',
   '/articles': '/writing',
-  '/content': '/',
-  '/videos': '/',
-  '/projects': '/',
+  '/': '/about',
+  '/content': '/about',
+  '/videos': '/about',
 }
 
 const { render, prerenderPaths, feedItems, SITE_NAME, SITE_URL } = await import(

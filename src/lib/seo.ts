@@ -23,10 +23,9 @@ export interface SeoData {
  * the static HTML and the tags after client navigation cannot drift apart.
  */
 const STATIC_ROUTES: Record<string, { title: string; description: string }> = {
-  '/': {
-    title: SITE_NAME,
-    description:
-      'Software engineer and researcher building performant, low-latency, high-fidelity systems. Interested in software engineering, ML research, and formal methods.',
+  '/projects': {
+    title: 'Projects',
+    description: 'Selected projects across private search, ML systems, and AI infrastructure.',
   },
   '/writing': {
     title: 'Writing',
@@ -40,7 +39,7 @@ const STATIC_ROUTES: Record<string, { title: string; description: string }> = {
   '/about': {
     title: 'About',
     description:
-      'Matthew Habtezgi is a software engineer and researcher interested in performant, low-latency, high-fidelity systems.',
+      'Software engineer and researcher building performant, low-latency, high-fidelity systems. Interested in software engineering, ML research, and formal methods.',
   },
 }
 

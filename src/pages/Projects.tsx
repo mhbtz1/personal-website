@@ -6,7 +6,7 @@ import { PROJECTS } from '../data/projects'
 export default function Projects() {
   return (
     <div className="page">
-      <Seo {...seoForPath('/')} />
+      <Seo {...seoForPath('/projects')} />
 
       <h1 className="page-title">Projects</h1>
 

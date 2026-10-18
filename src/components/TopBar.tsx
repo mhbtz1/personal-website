@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 const NAV_ITEMS = [
-  { path: '/', label: 'Projects', end: true },
+  { path: '/projects', label: 'Projects', end: false },
   { path: '/writing', label: 'Writing', end: false },
   { path: '/resume', label: 'Resume', end: false },
   { path: '/about', label: 'About', end: false },
@@ -10,7 +10,7 @@ const NAV_ITEMS = [
 export default function TopBar() {
   return (
     <header className="topbar">
-      <NavLink to="/" className="topbar-identity">
+      <NavLink to="/about" className="topbar-identity">
         {/* Decorative: the accessible name for this link is the text beside it,
             so alt="" avoids announcing the name twice. */}
         {/* Priority comes from the <link rel="preload"> in index.html. React 18
