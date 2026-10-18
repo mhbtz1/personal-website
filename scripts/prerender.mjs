@@ -24,6 +24,7 @@ const REDIRECTS = {
   '/articles': '/writing',
   '/content': '/',
   '/videos': '/',
+  '/projects': '/',
 }
 
 const { render, prerenderPaths, feedItems, SITE_NAME, SITE_URL } = await import(

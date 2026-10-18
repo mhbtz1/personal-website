@@ -7,7 +7,7 @@ export default function ProjectEntry({ project }: { project: Project }) {
   return (
     <li className="entry project" id={project.slug}>
       <div className="entry-head">
-        <h3 className="entry-title">
+        <h2 className="entry-title">
           {primary ? (
             <a className="link" href={primary.href} target="_blank" rel="noopener noreferrer">
               {project.title}
@@ -15,7 +15,7 @@ export default function ProjectEntry({ project }: { project: Project }) {
           ) : (
             project.title
           )}
-        </h3>
+        </h2>
         {project.links.length > 0 && (
           <span className="entry-links">
             {project.links.map((link) => (

@@ -1,37 +1,9 @@
 /* ---------------------------------------------------------------------------
-   Shared list entries — projects, writing rows, timeline rows, section heads.
+   Shared list entries — projects and writing rows.
 
    Selectors are element+class or descendant so they beat base.css regardless
    of stylesheet injection order.
    --------------------------------------------------------------------------- */
-
-/* --- Section heads ------------------------------------------------------ */
-
-div.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-h2.section-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: var(--tracking-caps);
-  color: var(--color-text);
-}
-
-a.section-more {
-  position: relative;
-}
-
-a.section-more::after {
-  content: '';
-  position: absolute;
-  inset: -0.625rem -0.375rem;
-}
 
 /* --- Project entry ------------------------------------------------------ */
 
@@ -115,29 +87,6 @@ a.writing-row {
   white-space: nowrap;
 }
 
-/* --- Timeline row (home experience, resume) ----------------------------- */
-
-li.timeline-row {
-  display: grid;
-  grid-template-columns: 5.5rem 1fr;
-  align-items: baseline;
-  gap: 0.25rem 1.25rem;
-  padding: 0.75rem 0;
-}
-
-.timeline-row .timeline-period {
-  white-space: nowrap;
-}
-
-.timeline-row .timeline-role {
-  color: var(--color-text-muted);
-}
-
-.timeline-row .timeline-org {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
 @media (max-width: 520px) {
   a.writing-row {
     grid-template-columns: 1fr;
@@ -146,10 +95,5 @@ li.timeline-row {
 
   .writing-row .writing-date {
     order: -1;
-  }
-
-  li.timeline-row {
-    grid-template-columns: 1fr;
-    gap: 0.125rem;
   }
 }

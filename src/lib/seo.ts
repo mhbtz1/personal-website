@@ -28,11 +28,6 @@ const STATIC_ROUTES: Record<string, { title: string; description: string }> = {
     description:
       'Software engineer and researcher building performant, low-latency, high-fidelity systems. Interested in software engineering, ML research, and formal methods.',
   },
-  '/projects': {
-    title: 'Projects',
-    description:
-      'Selected projects across private search, ML systems, and AI infrastructure.',
-  },
   '/writing': {
     title: 'Writing',
     description: 'Essays and notes on systems, ML infrastructure, and building with agents.',

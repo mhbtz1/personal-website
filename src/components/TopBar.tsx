@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 const NAV_ITEMS = [
-  { path: '/projects', label: 'Projects', end: false },
+  { path: '/', label: 'Projects', end: true },
   { path: '/writing', label: 'Writing', end: false },
   { path: '/resume', label: 'Resume', end: false },
   { path: '/about', label: 'About', end: false },

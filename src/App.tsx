@@ -1,7 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import About from './pages/About'
-import Home from './pages/Home'
 import PostsIndex from './pages/PostsIndex'
 import Post from './pages/Post'
 import Projects from './pages/Projects'
@@ -16,16 +15,16 @@ export function AppRoutes() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Projects />} />
         <Route path="/writing" element={<PostsIndex />} />
         <Route path="/posts/:slug" element={<Post />} />
         <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
 
         {/* Legacy paths kept so previously-shared links keep resolving. */}
         <Route path="/posts" element={<Navigate to="/writing" replace />} />
         <Route path="/articles" element={<Navigate to="/writing" replace />} />
+        <Route path="/projects" element={<Navigate to="/" replace />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
