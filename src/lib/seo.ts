@@ -26,12 +26,12 @@ const STATIC_ROUTES: Record<string, { title: string; description: string }> = {
   '/': {
     title: SITE_NAME,
     description:
-      'Founding engineer at Bronco AI. Research on private information retrieval, ML systems, and AI for hardware verification.',
+      'Software engineer and researcher building performant, low-latency, high-fidelity systems. Interested in software engineering, ML research, and formal methods.',
   },
   '/projects': {
     title: 'Projects',
     description:
-      'Encrypted search on homomorphic encryption, GPU and distributed-systems primitives, hardware verification, and agents.',
+      'Selected projects across private search, ML systems, and AI infrastructure.',
   },
   '/writing': {
     title: 'Writing',
@@ -45,7 +45,7 @@ const STATIC_ROUTES: Record<string, { title: string; description: string }> = {
   '/about': {
     title: 'About',
     description:
-      'Matthew Habtezgi builds AI and systems software that has to be correct, from chip-verification agents to encrypted search.',
+      'Matthew Habtezgi is a software engineer and researcher interested in performant, low-latency, high-fidelity systems.',
   },
 }
 

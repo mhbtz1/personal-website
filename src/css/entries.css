@@ -56,52 +56,11 @@ li.entry {
   text-decoration-color: var(--color-rule);
 }
 
-.entry .entry-meta {
-  display: inline-flex;
-  gap: 0.875rem;
-  white-space: nowrap;
-}
-
-.entry .entry-status--active {
-  color: var(--color-active);
-}
-
 .entry .entry-summary {
-  margin-top: 0.5rem;
+  margin-top: 0.375rem;
   max-width: var(--measure);
   color: var(--color-text-muted);
   line-height: var(--leading-normal);
-}
-
-.entry .entry-result {
-  margin-top: 0.625rem;
-  padding-left: 0.875rem;
-  border-left: 1px solid var(--color-rule-strong);
-  max-width: var(--measure);
-  font-size: var(--text-sm);
-  color: var(--color-text);
-  line-height: var(--leading-normal);
-}
-
-.entry .entry-label {
-  display: block;
-  margin-bottom: 0.125rem;
-}
-
-.entry .entry-foot {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  margin-top: 0.75rem;
-}
-
-.entry .entry-stack {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.04em;
-  color: var(--color-text-subtle);
 }
 
 .entry .entry-links {

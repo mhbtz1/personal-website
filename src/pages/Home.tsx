@@ -4,7 +4,7 @@ import ProjectEntry from '../components/ProjectEntry'
 import WritingRow from '../components/WritingRow'
 import { seoForPath } from '../lib/seo'
 import { CURRENT_FOCUS, PROFILE, PROFILE_LINKS } from '../data/profile'
-import { FEATURED_PROJECTS } from '../data/projects'
+import { PROJECTS } from '../data/projects'
 import { WRITING } from '../data/writing'
 import { EXPERIENCE, period } from '../data/experience'
 import '../css/entries.css'
@@ -56,9 +56,9 @@ export default function Home() {
       </section>
 
       <section className="home-section" aria-labelledby="work-heading">
-        <SectionHeader id="work-heading" title="Selected work" more={{ to: '/projects', label: 'All projects' }} />
+        <SectionHeader id="work-heading" title="Projects" />
         <ul className="rule-list">
-          {FEATURED_PROJECTS.map((project) => (
+          {PROJECTS.map((project) => (
             <ProjectEntry key={project.slug} project={project} />
           ))}
         </ul>

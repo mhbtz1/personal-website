@@ -2,9 +2,9 @@ export const PROFILE = {
   name: 'Matthew Habtezgi',
   location: 'San Francisco',
   thesis:
-    'I build AI and systems software that has to be correct: agents that verify chip designs, search that never sees your query, and the GPU and distributed infrastructure underneath.',
+    'Software engineer and researcher building performant, low-latency, high-fidelity systems.',
   summary:
-    'Founding engineer at Bronco AI. Independent research on private information retrieval and ML systems. MIT, Computer Science and Mathematics.',
+    'Interested in software engineering, ML research, and formal methods.',
   resumePdf: '/Matthew_Habtezgi.pdf',
 }
 
