@@ -14,7 +14,7 @@ export default function NotFound() {
       <p className="about-intro">That page could not be found.</p>
       <p style={{ marginTop: '1.5rem' }}>
         <Link to="/" className="link">
-          Browse posts
+          Go to the home page
         </Link>
       </p>
     </div>

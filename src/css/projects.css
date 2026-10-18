@@ -1,54 +1,27 @@
-.project-row {
+nav.area-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.area-nav a {
   position: relative;
-  padding: 1.125rem 0;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: baseline;
-  gap: 0.25rem 1rem;
 }
 
-/* Descendant selector so it beats `.row-title` from base.css regardless of
-   stylesheet injection order. */
-.project-row .project-title {
-  margin-bottom: 0;
-  transition: color var(--motion);
-}
-
-/* Stretches the title's hit area over the whole row, so the row is clickable
-   without wrapping it in an anchor (which would nest the paper link). */
-.project-link::after {
+.area-nav a::after {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -0.375rem -0.375rem;
 }
 
-.project-row:hover .project-title {
-  color: var(--color-active);
+section.area {
+  margin-top: 3rem;
 }
 
-.project-source {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.project-row .row-summary {
-  grid-column: 1 / -1;
-  margin-top: 0.25rem;
-}
-
-/* Nested links must sit above the title's overlay to stay clickable. */
-.project-row .row-summary a {
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 480px) {
-  .project-row {
-    grid-template-columns: 1fr;
-  }
-
-  .project-source {
-    grid-column: 1;
-    grid-row: auto;
-  }
+h2.area-title {
+  font-size: var(--text-xl);
+  margin-bottom: 0.5rem;
+  scroll-margin-top: 1.5rem;
 }

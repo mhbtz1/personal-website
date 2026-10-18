@@ -25,24 +25,27 @@ export interface SeoData {
 const STATIC_ROUTES: Record<string, { title: string; description: string }> = {
   '/': {
     title: SITE_NAME,
-    description: 'Writing on computer systems, ML systems, and AI.',
+    description:
+      'Founding engineer at Bronco AI. Research on private information retrieval, ML systems, and AI for hardware verification.',
+  },
+  '/projects': {
+    title: 'Projects',
+    description:
+      'Encrypted search on homomorphic encryption, GPU and distributed-systems primitives, hardware verification, and agents.',
+  },
+  '/writing': {
+    title: 'Writing',
+    description: 'Essays and notes on systems, ML infrastructure, and building with agents.',
+  },
+  '/resume': {
+    title: 'Resume',
+    description:
+      'Founding engineer at Bronco AI and 14.ai; previously Structify, AWS firmware, and MIT CSAIL formal verification.',
   },
   '/about': {
     title: 'About',
     description:
-      'Matthew Habtezgi is a software engineer and researcher, currently a founding engineer at Bronco AI.',
-  },
-  '/projects': {
-    title: 'Selected Projects',
-    description: 'Selected projects across ML systems and AI infrastructure.',
-  },
-  '/videos': {
-    title: 'Videos',
-    description: 'Talks, demos, and other recorded material.',
-  },
-  '/resume': {
-    title: 'Resume',
-    description: 'Experience and education for Matthew Habtezgi.',
+      'Matthew Habtezgi builds AI and systems software that has to be correct, from chip-verification agents to encrypted search.',
   },
 }
 

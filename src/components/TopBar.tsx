@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom'
 
 const NAV_ITEMS = [
-  { path: '/', label: 'Posts', end: true },
-  { path: '/about', label: 'About', end: false },
   { path: '/projects', label: 'Projects', end: false },
+  { path: '/writing', label: 'Writing', end: false },
   { path: '/resume', label: 'Resume', end: false },
+  { path: '/about', label: 'About', end: false },
 ]
 
 export default function TopBar() {

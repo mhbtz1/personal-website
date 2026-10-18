@@ -20,9 +20,10 @@ const distDir = join(root, 'dist')
 
 /** Old paths that were shared before the routes were renamed. */
 const REDIRECTS = {
-  '/posts': '/',
-  '/articles': '/',
-  '/content': '/videos',
+  '/posts': '/writing',
+  '/articles': '/writing',
+  '/content': '/',
+  '/videos': '/',
 }
 
 const { render, prerenderPaths, feedItems, SITE_NAME, SITE_URL } = await import(
@@ -112,7 +113,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
   <channel>
     <title>${xmlEscape(SITE_NAME)}</title>
     <link>${SITE_URL}/</link>
-    <description>Writing on computer systems, ML systems, and AI.</description>
+    <description>Essays and notes on systems, ML infrastructure, and building with agents.</description>
     <language>en</language>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
 ${items

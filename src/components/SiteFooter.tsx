@@ -1,20 +1,15 @@
 import ThemeToggle from './ThemeToggle'
-
-const SOCIALS = [
-  { href: 'https://github.com/mhbtz1', label: 'GitHub' },
-  { href: 'https://www.linkedin.com/in/matthew-habtezgi-b4511b1a9/', label: 'LinkedIn' },
-]
+import { PROFILE_LINKS } from '../data/profile'
 
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer-links">
-        {SOCIALS.map((social) => (
+        {PROFILE_LINKS.map((social) => (
           <a
             key={social.href}
             href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(social.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className="chrome"
           >
             {social.label}

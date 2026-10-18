@@ -1,0 +1,196 @@
+/* ---------------------------------------------------------------------------
+   Shared list entries — projects, writing rows, timeline rows, section heads.
+
+   Selectors are element+class or descendant so they beat base.css regardless
+   of stylesheet injection order.
+   --------------------------------------------------------------------------- */
+
+/* --- Section heads ------------------------------------------------------ */
+
+div.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+h2.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-caps);
+  color: var(--color-text);
+}
+
+a.section-more {
+  position: relative;
+}
+
+a.section-more::after {
+  content: '';
+  position: absolute;
+  inset: -0.625rem -0.375rem;
+}
+
+/* --- Project entry ------------------------------------------------------ */
+
+li.entry {
+  padding: 1.25rem 0;
+}
+
+.entry .entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.25rem;
+  flex-wrap: wrap;
+}
+
+.entry .entry-title {
+  font-size: var(--text-lg);
+  line-height: 1.25;
+}
+
+.entry .entry-title .link {
+  text-decoration-color: var(--color-rule);
+}
+
+.entry .entry-meta {
+  display: inline-flex;
+  gap: 0.875rem;
+  white-space: nowrap;
+}
+
+.entry .entry-status--active {
+  color: var(--color-active);
+}
+
+.entry .entry-summary {
+  margin-top: 0.5rem;
+  max-width: var(--measure);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+.entry .entry-result {
+  margin-top: 0.625rem;
+  padding-left: 0.875rem;
+  border-left: 1px solid var(--color-rule-strong);
+  max-width: var(--measure);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: var(--leading-normal);
+}
+
+.entry .entry-label {
+  display: block;
+  margin-bottom: 0.125rem;
+}
+
+.entry .entry-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.entry .entry-stack {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--color-text-subtle);
+}
+
+.entry .entry-links {
+  display: inline-flex;
+  gap: 1.125rem;
+}
+
+.entry .entry-links a {
+  position: relative;
+}
+
+.entry .entry-links a::after {
+  content: '';
+  position: absolute;
+  inset: -0.625rem -0.375rem;
+}
+
+/* --- Writing row -------------------------------------------------------- */
+
+a.writing-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  align-items: baseline;
+  gap: 0.25rem 1.25rem;
+  padding: 0.875rem 0;
+}
+
+.writing-row .writing-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.writing-row .writing-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  transition: color var(--motion);
+}
+
+.writing-row:hover .writing-title {
+  color: var(--color-active);
+}
+
+.writing-row .writing-abstract {
+  color: var(--color-text-subtle);
+  max-width: var(--measure);
+}
+
+.writing-row .writing-venue {
+  white-space: nowrap;
+}
+
+/* --- Timeline row (home experience, resume) ----------------------------- */
+
+li.timeline-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  align-items: baseline;
+  gap: 0.25rem 1.25rem;
+  padding: 0.75rem 0;
+}
+
+.timeline-row .timeline-period {
+  white-space: nowrap;
+}
+
+.timeline-row .timeline-role {
+  color: var(--color-text-muted);
+}
+
+.timeline-row .timeline-org {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  a.writing-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .writing-row .writing-date {
+    order: -1;
+  }
+
+  li.timeline-row {
+    grid-template-columns: 1fr;
+    gap: 0.125rem;
+  }
+}

@@ -122,8 +122,8 @@ export default function Post() {
       </article>
 
       <footer className="post-footer">
-        <Link to="/" className="chrome">
-          &larr; All posts
+        <Link to="/writing" className="chrome">
+          &larr; All writing
         </Link>
       </footer>
     </div>
