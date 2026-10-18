@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
     title: 'Encrypted Search Engine',
     summary:
       'Private search on a from-scratch BFV homomorphic encryption library. The server ranks and returns documents without seeing the query.',
-    links: [],
+    links: [{ label: 'Code', href: 'https://github.com/mhbtz1/bfv-private-search' }],
   },
   {
     slug: 'effectful-prompt-optimizer',
